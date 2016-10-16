@@ -21,7 +21,8 @@ public class Bullet : MonoBehaviour {
     /// </summary>
     /// <param name="target_Num">被弾した「Gimmick」オブジェクトの設定数値</param>
     /// <returns></returns>
-    float BulletMultiplication(float target_Num) {
+    float BulletMultiplication(float target_Num)
+    {
         return target_Num * 10;
     }
 
@@ -41,12 +42,16 @@ public class Bullet : MonoBehaviour {
         {
             GimmickState colState = col.collider.GetComponent<GimmickState>();
 
-            if (eBulletType == Enum_BulletType.Multi) 
+            if (eBulletType == Enum_BulletType.Multi)
+            {
                 colState.gimmickNum = BulletMultiplication(colState.gimmickNum);
-            
-            else if (eBulletType == Enum_BulletType.Div)
-                colState.gimmickNum = BulletDivision(colState.gimmickNum);
+            }
 
+            else if (eBulletType == Enum_BulletType.Div)
+            {
+                colState.gimmickNum = BulletDivision(colState.gimmickNum);
+            }
+                
             Destroy(this.gameObject);
         } else {
             Destroy(this.gameObject);

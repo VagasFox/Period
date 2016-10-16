@@ -13,9 +13,13 @@ enum Enum_GimmickState
 //主に値の設定と変更を行う。Enum_GimmickStateに合わせ見た目の変更もやるかも
 public class GimmickState : MonoBehaviour {
 
-    [System.NonSerialized] public float gimmickNum = 5.55555f;
+    public float gimmickNum = 55.5555f;
+    public float beforeGimmickNum;
+    public int gimmickNumCount;
+    public int pointPlace;
 
     void Start() {
+        gimmickNumCount = gimmickNum.ToString().Length;
     }
 
     void Update()
