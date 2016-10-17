@@ -36,7 +36,12 @@ public class BulletTypeD : MonoBehaviour {
     /// <returns></returns>
     decimal BulletDivision(decimal target_Num)
     {
-        return target_Num * 0.1m;
+        //1桁以下にならないようにする
+        if(target_Num / 10 >= 1)
+        {
+            return target_Num * 0.1m;
+        }
+            return target_Num;
     }
 
     void OnCollisionEnter(Collision col)

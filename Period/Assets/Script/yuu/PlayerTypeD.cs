@@ -91,7 +91,11 @@ public class PlayerTypeD : MonoBehaviour {
         //Textの表示の更新
         GameObject text = numWindow.transform.GetChild(0).gameObject;
         string gimmickNumDisplay = hitObj.GetComponent<GimmickStateTypeD>().gimmickNum.ToString();
-        text.GetComponent<Text>().text = gimmickNumDisplay.Trim('0');
+        
+        //数値が大きくなりすぎないようにするための案①(Text表示を制限し、実際の数値を合わせる)
+        //text.GetComponent<Text>().text = gimmickNumDisplay.Trim('0','.');
+        //hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(text.GetComponent<Text>().text);
+
     }
 
     /// <summary>
