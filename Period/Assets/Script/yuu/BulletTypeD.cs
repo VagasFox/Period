@@ -9,6 +9,7 @@ public enum Enum_BulletType_TypeD
 
 public class BulletTypeD : MonoBehaviour {
     public Enum_BulletType_TypeD eBulletType;
+    public int gimmickNumberCount = 100;
 
     void Start()
     {
@@ -26,11 +27,11 @@ public class BulletTypeD : MonoBehaviour {
     /// <returns></returns>
     decimal BulletMultiplication(decimal target_Num)
     {
-        if (target_Num % 10 != 0)
+        if (target_Num / 10 >= 1 && target_Num.ToString().Length - 1 >= gimmickNumberCount)
         {
-            return target_Num * 10;
+            return target_Num;
         }
-        return target_Num;
+        return target_Num * 10;
     }
 
     /// <summary>
@@ -53,6 +54,9 @@ public class BulletTypeD : MonoBehaviour {
         if (col.collider.CompareTag("Gimmick"))
         {
             GimmickStateTypeD colState = col.collider.GetComponent<GimmickStateTypeD>();
+            
+            //対象ギミックの桁数制限を取得
+            gimmickNumberCount = colState.gimmickNumCount;
 
             if (eBulletType == Enum_BulletType_TypeD.MultiTypeD)
             {

@@ -12,17 +12,20 @@ enum Enum_GimmickState_TypeD
 
 //主に値の設定と変更を行う。Enum_GimmickStateに合わせ見た目の変更もやるかも
 public class GimmickStateTypeD : MonoBehaviour {
-
-    public decimal gimmickNum = 55.5055m;
+    public double gimmickNumber = 100;
+    public decimal gimmickNum;
     public decimal beforeGimmickNum;
     public int gimmickNumCount;
+    public int digit = 1;
 
     void Start()
     {
-        gimmickNumCount = gimmickNum.ToString().Length;
+        gimmickNum = (decimal)gimmickNumber;
+        gimmickNumCount = gimmickNum.ToString().Length + digit;
     }
 
     void Update()
     {
+        gimmickNumber = (double)gimmickNum;
     }
 }

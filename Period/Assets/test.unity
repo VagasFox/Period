@@ -371,7 +371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fbbf6dbb1d70a459d0a60636b23999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gimmickNumber: 5.55
   gimmickNumCount: 0
+  digit: 1
 --- !u!1 &718345852
 GameObject:
   m_ObjectHideFlags: 0
