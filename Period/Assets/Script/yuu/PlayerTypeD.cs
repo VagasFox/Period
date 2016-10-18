@@ -88,13 +88,15 @@ public class PlayerTypeD : MonoBehaviour {
         var screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, targetPos);
         rectTransform.localPosition = screenPos;
 
-        //Textの表示の更新
+        //Textの表示の更新(数値を表示するのみバージョン)
+        //GameObject text = numWindow.transform.GetChild(0).gameObject;
+        //text.GetComponent<Text>().text = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
+
+        //数値が大きくなりすぎないようにするための案①(Text表示を制限し、実際の数値をTextに合わせるバージョン)
         GameObject text = numWindow.transform.GetChild(0).gameObject;
         string gimmickNumDisplay = hitObj.GetComponent<GimmickStateTypeD>().gimmickNum.ToString();
-        
-        //数値が大きくなりすぎないようにするための案①(Text表示を制限し、実際の数値を合わせる)
-        //text.GetComponent<Text>().text = gimmickNumDisplay.Trim('0','.');
-        //hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(text.GetComponent<Text>().text);
+        text.GetComponent<Text>().text = gimmickNumDisplay.Trim('0','.');
+        hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(text.GetComponent<Text>().text);
 
     }
 
