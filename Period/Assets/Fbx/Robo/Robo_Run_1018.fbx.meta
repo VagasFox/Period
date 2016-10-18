@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 5cf7e8a8a608cdd4f86b8f25e1e749b9
+timeCreated: 1476797940
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackWheel
+    100002: Body
+    100004: Head
+    100006: HeadTop
+    100008: LeftArm
+    100010: LeftFlag
+    100012: LeftFlag1
+    100014: LeftFlagTop
+    100016: LeftFrontWheel
+    100018: LeftFrontWheel1
+    100020: LeftGun
+    100022: LeftGunTop
+    100024: LeftHand
+    100026: pCube1
+    100028: pCube16
+    100030: pCylinder15
+    100032: pCylinder18
+    100034: pCylinder19
+    100036: pCylinder3
+    100038: pCylinder4
+    100040: polySurface1
+    100042: polySurface3
+    100044: polySurface3_polySurface1_polySurface6_group2_pCylinder17
+    100046: polySurface6
+    100048: pPipe1
+    100050: pPipe2
+    100052: RightArm
+    100054: RightFlag
+    100056: RightFlag1
+    100058: RightFlagTop
+    100060: RightFrontWheel
+    100062: RightFrontWheel1
+    100064: RightGun
+    100066: RightGunTop
+    100068: RightHand
+    100070: //RootNode
+    100072: RoboBody
+    400000: BackWheel
+    400002: Body
+    400004: Head
+    400006: HeadTop
+    400008: LeftArm
+    400010: LeftFlag
+    400012: LeftFlag1
+    400014: LeftFlagTop
+    400016: LeftFrontWheel
+    400018: LeftFrontWheel1
+    400020: LeftGun
+    400022: LeftGunTop
+    400024: LeftHand
+    400026: pCube1
+    400028: pCube16
+    400030: pCylinder15
+    400032: pCylinder18
+    400034: pCylinder19
+    400036: pCylinder3
+    400038: pCylinder4
+    400040: polySurface1
+    400042: polySurface3
+    400044: polySurface3_polySurface1_polySurface6_group2_pCylinder17
+    400046: polySurface6
+    400048: pPipe1
+    400050: pPipe2
+    400052: RightArm
+    400054: RightFlag
+    400056: RightFlag1
+    400058: RightFlagTop
+    400060: RightFrontWheel
+    400062: RightFrontWheel1
+    400064: RightGun
+    400066: RightGunTop
+    400068: RightHand
+    400070: //RootNode
+    400072: RoboBody
+    4300000: pCube1
+    4300002: polySurface6
+    4300004: polySurface1
+    4300006: polySurface3
+    4300008: pCylinder3
+    4300010: pCylinder4
+    4300012: pCylinder15
+    4300014: pPipe1
+    4300016: pPipe2
+    4300018: pCylinder19
+    4300020: pCylinder18
+    4300022: pCube16
+    4300024: polySurface3_polySurface1_polySurface6_group2_pCylinder17
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube1
+    13700002: pCube16
+    13700004: pCylinder15
+    13700006: pCylinder18
+    13700008: pCylinder19
+    13700010: pCylinder3
+    13700012: pCylinder4
+    13700014: polySurface1
+    13700016: polySurface3
+    13700018: polySurface3_polySurface1_polySurface6_group2_pCylinder17
+    13700020: polySurface6
+    13700022: pPipe1
+    13700024: pPipe2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
