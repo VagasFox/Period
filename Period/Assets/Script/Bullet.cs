@@ -23,7 +23,11 @@ public class Bullet : MonoBehaviour {
     /// <returns></returns>
     float BulletMultiplication(float target_Num)
     {
-        return target_Num * 10;
+        if (target_Num % 10 != 0)
+        {
+            return target_Num * 10;
+        }
+        return target_Num;
     }
 
     /// <summary>
@@ -33,7 +37,12 @@ public class Bullet : MonoBehaviour {
     /// <returns></returns>
     float BulletDivision(float target_Num)
     {
-        return target_Num * 0.1f;
+        //小数点1桁以下にならないようにする
+        if (target_Num / 10 >= 0.1f)
+        {
+            return target_Num * 0.1f;
+        }
+        return target_Num;
     }
 
     void OnCollisionEnter(Collision col)

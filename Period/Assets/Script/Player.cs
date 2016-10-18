@@ -81,8 +81,13 @@ public class Player : MonoBehaviour {
         rectTransform.localPosition = screenPos;
 
         //Textの表示の更新
+        //GameObject text = numWindow.transform.GetChild(0).gameObject;
+        //text.GetComponent<Text>().text = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
+
+        //数値が大きくなりすぎないようにするための案①(Text表示を制限し、実際の数値をTextに合わせるバージョン)
         GameObject text = numWindow.transform.GetChild(0).gameObject;
         text.GetComponent<Text>().text = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
+        hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(text.GetComponent<Text>().text);
     }
 
     /// <summary>

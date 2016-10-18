@@ -26,7 +26,11 @@ public class BulletTypeD : MonoBehaviour {
     /// <returns></returns>
     decimal BulletMultiplication(decimal target_Num)
     {
-        return target_Num * 10;
+        if (target_Num % 10 != 0)
+        {
+            return target_Num * 10;
+        }
+        return target_Num;
     }
 
     /// <summary>
@@ -36,8 +40,8 @@ public class BulletTypeD : MonoBehaviour {
     /// <returns></returns>
     decimal BulletDivision(decimal target_Num)
     {
-        //1桁以下にならないようにする
-        if(target_Num / 10 >= 1)
+        //小数点1桁以下にならないようにする
+        if(target_Num / 10 >= 0.1m)
         {
             return target_Num * 0.1m;
         }

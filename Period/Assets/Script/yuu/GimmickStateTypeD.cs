@@ -13,7 +13,7 @@ enum Enum_GimmickState_TypeD
 //主に値の設定と変更を行う。Enum_GimmickStateに合わせ見た目の変更もやるかも
 public class GimmickStateTypeD : MonoBehaviour {
 
-    public decimal gimmickNum = 55.5555m;
+    public decimal gimmickNum = 55.5055m;
     public decimal beforeGimmickNum;
     public int gimmickNumCount;
 
