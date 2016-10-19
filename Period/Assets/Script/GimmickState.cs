@@ -14,9 +14,7 @@ enum Enum_GimmickState
 public class GimmickState : MonoBehaviour {
 
     public float gimmickNum = 55.5555f;
-    public float beforeGimmickNum;
     public int gimmickNumCount;
-    public int pointPlace;
 
     void Start() {
         gimmickNumCount = gimmickNum.ToString().Length;
