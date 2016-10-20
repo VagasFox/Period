@@ -11,6 +11,7 @@ public enum Enum_GimmickState
     DOOR,       //ドア
     LIGHT,      //ライト
     ROTATE,     //回転
+    NONE,       //何も無し
 }
 
 //主に値の設定と変更を行う。Enum_GimmickStateに合わせ見た目の変更もやるかも
