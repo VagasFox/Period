@@ -24,7 +24,6 @@ GameObject:
   - 23: {fileID: 23000011394384212}
   - 54: {fileID: 54000012174178666}
   - 114: {fileID: 114000014030587268}
-  - 114: {fileID: 114000014142226338}
   m_Layer: 0
   m_Name: BulletDiv
   m_TagString: Untagged
@@ -105,18 +104,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffb0b8ca65bb2f4478b9559fd13015cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eBulletType: 1
---- !u!114 &114000014142226338
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013829685016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcebcb0a8b761f4c8e1560de90994cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eBulletType: 1
