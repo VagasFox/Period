@@ -23,6 +23,7 @@ public class DoorGimmick : MonoBehaviour {
         GimStateTypeD.Door = true;
         GimStateTypeD.Gravity = false;
         GimStateTypeD.Rotation = false;
+        GimStateTypeD.Light = false;
 
         minPass = (decimal)minPassNum;
         maxPass = (decimal)maxPassNum;

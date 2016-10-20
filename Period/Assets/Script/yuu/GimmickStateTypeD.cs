@@ -21,6 +21,7 @@ public class GimmickStateTypeD : MonoBehaviour {
     public bool Gravity;
     public bool Door;
     public bool Rotation;
+    public bool Light;
 
     void Start()
     {

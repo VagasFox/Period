@@ -9,6 +9,10 @@ public class LightGimmick : MonoBehaviour {
     // Use this for initialization
     void Start() {
         GimStateTypeD = gameObject.GetComponent<GimmickStateTypeD>();
+        GimStateTypeD.Light = true;
+        GimStateTypeD.Door = false;
+        GimStateTypeD.Gravity = false;
+        GimStateTypeD.Rotation = false;
     }
 	
 	// Update is called once per frame

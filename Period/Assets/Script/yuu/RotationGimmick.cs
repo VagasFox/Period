@@ -17,6 +17,10 @@ public class RotationGimmick : MonoBehaviour
     void Start()
     {
         GimStateTypeD = gameObject.GetComponent<GimmickStateTypeD>();
+        GimStateTypeD.Rotation = true;
+        GimStateTypeD.Gravity = false;
+        GimStateTypeD.Door = false;
+        GimStateTypeD.Light = false;
     }
 
     // Update is called once per frame

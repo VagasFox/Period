@@ -11,6 +11,8 @@ public class PlayerTypeD : MonoBehaviour {
 
     [SerializeField]
     private GameObject numWindow;                          //数値表示用背景
+    private String HintText1;                              //何のギミックなのかを表示させる用
+    private String HintText2;                              //何のギミックなのかを表示させる用
     RectTransform rectTransform;                           //numWindowのRectTransform
 
     [SerializeField]
@@ -93,17 +95,44 @@ public class PlayerTypeD : MonoBehaviour {
         //GameObject text = numWindow.transform.GetChild(0).gameObject;
         //text.GetComponent<Text>().text = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
 
-        //数値が大きくなりすぎないようにするための案①(Text表示を制限し、実際の数値をTextに合わせるバージョン)
+        //数値が大きくなりすぎないようにするための案①(文字数を制限し、実際の数値をTextに合わせるバージョン)
         GameObject text = numWindow.transform.GetChild(0).gameObject;
         string gimmickNumDisplay = hitObj.GetComponent<GimmickStateTypeD>().gimmickNum.ToString();
-        
+        //文字数制限
         if (gimmickNumDisplay.Length > hitObj.GetComponent<GimmickStateTypeD>().gimmickNumCount)
         {
             gimmickNumDisplay = gimmickNumDisplay.Remove(hitObj.GetComponent<GimmickStateTypeD>().gimmickNumCount);
         }
+        //ギミックの種類判断と、Textに表示するヒント文
+        if (hitObj.GetComponent<GimmickStateTypeD>().Gravity == true)
+        {
+            HintText1 = "重力:";
+            HintText2 = "";
+        }
+        else if (hitObj.GetComponent<GimmickStateTypeD>().Door == true)
+        {
+            HintText1 = hitObj.GetComponent<DoorGimmick>().minPass + " < ";
+            HintText2 = " < " + hitObj.GetComponent<DoorGimmick>().maxPass;
+        }
+        else if (hitObj.GetComponent<GimmickStateTypeD>().Rotation == true)
+        {
+            HintText1 = "角度:";
+            HintText2 = "";
+        }
+        else if (hitObj.GetComponent<GimmickStateTypeD>().Light == true)
+        {
+            HintText1 = "光度:";
+            HintText2 = "";
+        }
+        else
+        {
+            HintText1 = "";
+            HintText2 = "";
+        }
 
-        text.GetComponent<Text>().text = gimmickNumDisplay;
-        hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(text.GetComponent<Text>().text);
+        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
+        hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(gimmickNumDisplay);
+
 
     }
 

@@ -12,6 +12,7 @@ public class GravityGimmick : MonoBehaviour {
         GimStateTypeD.Gravity = true;
         GimStateTypeD.Door = false;
         GimStateTypeD.Rotation = false;
+        GimStateTypeD.Light = false;
 	}
 	
 	// Update is called once per frame
