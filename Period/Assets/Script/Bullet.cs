@@ -8,12 +8,15 @@ public enum Enum_BulletType {
 
 public class Bullet : MonoBehaviour {
     public Enum_BulletType eBulletType;
+    private int gimmickNumberCount = 100;
 
-	void Start () {
+    void Start()
+    {
     }
-	
-	void Update () {
-        
+
+    void Update()
+    {
+
     }
 
     /// <summary>
@@ -21,13 +24,14 @@ public class Bullet : MonoBehaviour {
     /// </summary>
     /// <param name="target_Num">被弾した「Gimmick」オブジェクトの設定数値</param>
     /// <returns></returns>
-    float BulletMultiplication(float target_Num)
+    decimal BulletMultiplication(decimal target_Num)
     {
-        if (target_Num % 10 != 0)
+        //数値が10以上で、現在の桁数が初期の桁数より大きい場合は乗算しない
+        if (target_Num / 10 >= 1 && target_Num.ToString().Length - 1 >= gimmickNumberCount)
         {
-            return target_Num * 10;
+            return target_Num;
         }
-        return target_Num;
+        return target_Num * 10;
     }
 
     /// <summary>
@@ -35,12 +39,12 @@ public class Bullet : MonoBehaviour {
     /// </summary>
     /// <param name="target_Num">被弾した「Gimmick」オブジェクトの設定数値</param>
     /// <returns></returns>
-    float BulletDivision(float target_Num)
+    decimal BulletDivision(decimal target_Num)
     {
         //小数点1桁以下にならないようにする
-        if (target_Num / 10 >= 0.1f)
+        if (target_Num / 10 >= 0.1m)
         {
-            return target_Num * 0.1f;
+            return target_Num * 0.1m;
         }
         return target_Num;
     }
@@ -51,7 +55,9 @@ public class Bullet : MonoBehaviour {
         {
             GimmickState colState = col.collider.GetComponent<GimmickState>();
 
-            if (colState == null) return;
+            //対象ギミックの桁数制限を取得
+            gimmickNumberCount = colState.gimmickNumCount;
+
             if (eBulletType == Enum_BulletType.Multi)
             {
                 colState.gimmickNum = BulletMultiplication(colState.gimmickNum);
@@ -63,7 +69,9 @@ public class Bullet : MonoBehaviour {
             }
 
             Destroy(this.gameObject);
-        } else {
+        }
+        else
+        {
             Destroy(this.gameObject);
         }
     }

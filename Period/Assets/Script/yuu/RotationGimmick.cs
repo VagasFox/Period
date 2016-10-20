@@ -12,21 +12,17 @@ public class RotationGimmick : MonoBehaviour
     float r_time;
     public float timeSpped = 3f;
 
-    GimmickStateTypeD GimStateTypeD;
+    GimmickState gimState;
     // Use this for initialization
     void Start()
     {
-        GimStateTypeD = gameObject.GetComponent<GimmickStateTypeD>();
-        GimStateTypeD.Rotation = true;
-        GimStateTypeD.Gravity = false;
-        GimStateTypeD.Door = false;
-        GimStateTypeD.Light = false;
+        gimState = gameObject.GetComponent<GimmickState>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rotation = (float)GimStateTypeD.gimmickNum;
+        rotation = (float)gimState.gimmickNum;
         Bridge.transform.rotation = Quaternion.Euler(0, rotation, 0);
     }
 }

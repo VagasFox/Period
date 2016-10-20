@@ -6,18 +6,26 @@ using System;
 public class Player : MonoBehaviour {
     private Ray ray;
     private RaycastHit rayHit;
+    [SerializeField]
     private GameObject hitObj;
 
-    [SerializeField] private GameObject numWindow;                          //数値表示用背景
-    RectTransform rectTransform;                                            //numWindowのRectTransform
+    [SerializeField]
+    private GameObject numWindow;                          //数値表示用背景
+    private String HintText1;                              //何のギミックなのかを表示させる用
+    private String HintText2;                              //何のギミックなのかを表示させる用
+    RectTransform rectTransform;                           //numWindowのRectTransform
 
-    [SerializeField] private GameObject[] bulletList = new GameObject[2];   //弾丸の種類
-    [SerializeField] private Transform muzzle;                              //弾丸発射点
-    [SerializeField] private float speed = 1000;                            //弾の発射速度
+    [SerializeField]
+    private GameObject[] bulletList = new GameObject[2];   //弾丸の種類
+    [SerializeField]
+    private Transform muzzle;                              //弾丸発射点
+    [SerializeField]
+    private float speed = 1000;                            //弾の発射速度
 
     private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
 
-    void Awake() {
+    void Awake()
+    {
         rectTransform = numWindow.GetComponent<RectTransform>();
     }
 
@@ -31,7 +39,8 @@ public class Player : MonoBehaviour {
     /// <summary>
     /// Rayの発射。Gmmickのオブジェクト取得とViewWindowのActive状況の変更
     /// </summary>
-    void PlayerRay() {
+    void PlayerRay()
+    {
         //Rayの初期化
         ray = new Ray(new Vector3(transform.position.x,
                                   transform.position.y + 1f,
@@ -47,13 +56,15 @@ public class Player : MonoBehaviour {
                 hitObj = rayHit.collider.gameObject;
                 numWindow.SetActive(true);
             }
-            else {
+            else
+            {
                 //Labelを非表示にしてhitObjを空にする
                 numWindow.SetActive(false);
                 hitObj = null;
             }
         }
-        else {
+        else
+        {
             //hitObjが空なら処理をしない
             if (hitObj == null) return;
 
@@ -73,32 +84,66 @@ public class Player : MonoBehaviour {
 
         //numWindow(Label)の座標の更新
         var worldCamera = Camera.main;
-        var targetPos = new Vector3(hitObj.transform.position.x, 
+        var targetPos = new Vector3(hitObj.transform.position.x,
                                     hitObj.transform.position.y,
                                     hitObj.transform.position.z);
 
         var screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, targetPos);
         rectTransform.localPosition = screenPos;
 
-        //Textの表示の更新
-        //GameObject text = numWindow.transform.GetChild(0).gameObject;
-        //text.GetComponent<Text>().text = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
 
-        //数値が大きくなりすぎないようにするための案①(Text表示を制限し、実際の数値をTextに合わせるバージョン)
+        //数値が大きくなりすぎないようにするための案①(文字数を制限し、実際の数値をTextに合わせるバージョン)
         GameObject text = numWindow.transform.GetChild(0).gameObject;
-        text.GetComponent<Text>().text = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
-        hitObj.GetComponent<GimmickStateTypeD>().gimmickNum = decimal.Parse(text.GetComponent<Text>().text);
+        string gimmickNumDisplay = hitObj.GetComponent<GimmickState>().gimmickNum.ToString();
+        //文字数制限
+        if (gimmickNumDisplay.Length > hitObj.GetComponent<GimmickState>().gimmickNumCount)
+        {
+            gimmickNumDisplay = gimmickNumDisplay.Remove(hitObj.GetComponent<GimmickState>().gimmickNumCount);
+        }
+        //ギミックの種類判断と、Textに表示するヒント文
+        if (hitObj.GetComponent<GimmickState>().eGimState == Enum_GimmickState.GRAVITY)
+        {
+            HintText1 = "重力:";
+            HintText2 = "";
+        }
+        else if (hitObj.GetComponent<GimmickState>().eGimState == Enum_GimmickState.DOOR)
+        {
+            HintText1 = hitObj.GetComponent<DoorGimmick>().minPass + " < ";
+            HintText2 = " < " + hitObj.GetComponent<DoorGimmick>().maxPass;
+        }
+        else if (hitObj.GetComponent<GimmickState>().eGimState == Enum_GimmickState.ROTATE)
+        {
+            HintText1 = "角度:";
+            HintText2 = "";
+        }
+        else if (hitObj.GetComponent<GimmickState>().eGimState == Enum_GimmickState.LIGHT)
+        {
+            HintText1 = "光度:";
+            HintText2 = "";
+        }
+        else
+        {
+            HintText1 = "";
+            HintText2 = "";
+        }
+
+        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
+        hitObj.GetComponent<GimmickState>().gimmickNum = decimal.Parse(gimmickNumDisplay);
+
+
     }
 
     /// <summary>
     /// 弾の発射と弾の種類変更
     /// </summary>
-    void ShotBullet() {
+    void ShotBullet()
+    {
         //弾の種類変更
         if (Input.GetKeyDown(KeyCode.Z)) g_stateFlag = !g_stateFlag;
-            
+
         //弾の発射
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
             GameObject bullets = GameObject.Instantiate(bulletList[Convert.ToInt32(g_stateFlag)]) as GameObject;
 
             Vector3 force;

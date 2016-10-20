@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692528, g: 0.49678677, b: 0.57508475, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -309,7 +309,6 @@ GameObject:
   - 65: {fileID: 513348556}
   - 23: {fileID: 513348555}
   - 114: {fileID: 513348554}
-  - 114: {fileID: 513348559}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Gimmick
@@ -323,13 +322,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 513348553}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4460346c13cfb74b9ebb6dc12da3681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gimmickNum: 55.5555
+  gimmickNumber: 100
   gimmickNumCount: 0
+  digit: 1
+  eGimState: 0
 --- !u!23 &513348555
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -391,24 +392,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!114 &513348559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 513348553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fbbf6dbb1d70a459d0a60636b23999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gimmickNumber: 5.55
-  gimmickNumCount: 0
-  digit: 1
-  Gravity: 0
-  Door: 0
-  Rotation: 0
-  Light: 0
 --- !u!1 &718345852
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,16 +856,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1144259709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fbbf6dbb1d70a459d0a60636b23999, type: 3}
+  m_Script: {fileID: 11500000, guid: c4460346c13cfb74b9ebb6dc12da3681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickNumber: 55.5
   gimmickNumCount: 0
   digit: 1
-  Gravity: 0
-  Door: 0
-  Rotation: 0
-  Light: 0
+  eGimState: 4
 --- !u!23 &1144259712
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1027,26 +1007,9 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218376588}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bfa2e6787985c9429a8175176004fec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numWindow: {fileID: 1209764762}
-  bulletList:
-  - {fileID: 1000014080495686, guid: b67a943c5c359b84b9a610f13ece7826, type: 2}
-  - {fileID: 1000013829685016, guid: 8f204274424e469499cf18d5386e9530, type: 2}
-  muzzle: {fileID: 1795794535}
-  speed: 1000
---- !u!114 &1218376596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1218376588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c35f58ad6a74e4393ada6586f90df5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bfa2e6787985c9429a8175176004fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitObj: {fileID: 0}
@@ -1267,16 +1230,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1368206262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fbbf6dbb1d70a459d0a60636b23999, type: 3}
+  m_Script: {fileID: 11500000, guid: c4460346c13cfb74b9ebb6dc12da3681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gimmickNumber: 9.81
+  gimmickNumber: 9.78
   gimmickNumCount: 0
   digit: 1
-  Gravity: 0
-  Door: 0
-  Rotation: 0
-  Light: 0
+  eGimState: 0
 --- !u!23 &1368206265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1502,16 +1462,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1545237388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fbbf6dbb1d70a459d0a60636b23999, type: 3}
+  m_Script: {fileID: 11500000, guid: c4460346c13cfb74b9ebb6dc12da3681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickNumber: 80
   gimmickNumCount: 0
   digit: 1
-  Gravity: 0
-  Door: 0
-  Rotation: 0
-  Light: 0
+  eGimState: 5
 --- !u!1 &1557971131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,16 +2015,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1863245882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fbbf6dbb1d70a459d0a60636b23999, type: 3}
+  m_Script: {fileID: 11500000, guid: c4460346c13cfb74b9ebb6dc12da3681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickNumber: 0.9
   gimmickNumCount: 0
   digit: 1
-  Gravity: 0
-  Door: 0
-  Rotation: 0
-  Light: 0
+  eGimState: 6
 --- !u!23 &1863245885
 MeshRenderer:
   m_ObjectHideFlags: 0

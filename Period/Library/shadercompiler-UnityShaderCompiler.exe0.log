@@ -3,19 +3,11 @@ Cmd: getPlatforms
 Cmd: preprocess
   insize=2933 outsize=203 ok=1
 Cmd: preprocess
-  insize=889 outsize=229 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=960 outsize=366 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=960 outsize=690 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  insize=836 outsize=215 ok=1
 Cmd: preprocess
   insize=6745 outsize=291 ok=1
 Cmd: preprocess
-  insize=586 outsize=194 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=689 outsize=562 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=689 outsize=354 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  insize=552 outsize=184 ok=1
 Cmd: preprocess
   insize=678 outsize=208 ok=1
 Cmd: preprocess

@@ -16,14 +16,10 @@ public class DoorGimmick : MonoBehaviour {
 
     public bool Complete;
 
-    GimmickStateTypeD GimStateTypeD;
+    GimmickState gimState;
 	// Use this for initialization
 	void Start () {
-        GimStateTypeD = gameObject.GetComponent<GimmickStateTypeD>();
-        GimStateTypeD.Door = true;
-        GimStateTypeD.Gravity = false;
-        GimStateTypeD.Rotation = false;
-        GimStateTypeD.Light = false;
+        gimState = gameObject.GetComponent<GimmickState>();
 
         minPass = (decimal)minPassNum;
         maxPass = (decimal)maxPassNum;
@@ -42,7 +38,7 @@ public class DoorGimmick : MonoBehaviour {
     {
         if (gameObject.tag == "Gimmick")
         {
-            password = GimStateTypeD.gimmickNum;
+            password = gimState.gimmickNum;
 
             if (minPass < password && password < maxPass)
             {
