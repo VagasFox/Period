@@ -3,7 +3,8 @@ using System.Collections;
 
 public enum Enum_BulletType {
     Multi = 0,  //掛け算
-    Div         //割り算
+    Div,        //割り算
+    Attack,     //攻撃
 }
 
 public class Bullet : MonoBehaviour {
