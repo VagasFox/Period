@@ -20,6 +20,10 @@ public class DoorGimmick : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         GimStateTypeD = gameObject.GetComponent<GimmickStateTypeD>();
+        GimStateTypeD.Door = true;
+        GimStateTypeD.Gravity = false;
+        GimStateTypeD.Rotation = false;
+
         minPass = (decimal)minPassNum;
         maxPass = (decimal)maxPassNum;
         Complete = false;

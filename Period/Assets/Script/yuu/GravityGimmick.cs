@@ -9,6 +9,9 @@ public class GravityGimmick : MonoBehaviour {
 	void Start () {
         GimStateTypeD = gameObject.GetComponent<GimmickStateTypeD>();
         gravity = (float)GimStateTypeD.gimmickNum;
+        GimStateTypeD.Gravity = true;
+        GimStateTypeD.Door = false;
+        GimStateTypeD.Rotation = false;
 	}
 	
 	// Update is called once per frame

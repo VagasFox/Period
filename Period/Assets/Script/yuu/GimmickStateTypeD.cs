@@ -17,6 +17,11 @@ public class GimmickStateTypeD : MonoBehaviour {
     public int gimmickNumCount;
     public int digit = 1; //初期の桁数±何桁まで許容するか
 
+    //どの種類のギミックなのかを判断させるbool
+    public bool Gravity;
+    public bool Door;
+    public bool Rotation;
+
     void Start()
     {
         gimmickNum = (decimal)gimmickNumber;
