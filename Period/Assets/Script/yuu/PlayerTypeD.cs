@@ -6,11 +6,12 @@ using System;
 public class PlayerTypeD : MonoBehaviour {
     private Ray ray;
     private RaycastHit rayHit;
+    [SerializeField]
     private GameObject hitObj;
 
     [SerializeField]
     private GameObject numWindow;                          //数値表示用背景
-    RectTransform rectTransform;                                            //numWindowのRectTransform
+    RectTransform rectTransform;                           //numWindowのRectTransform
 
     [SerializeField]
     private GameObject[] bulletList = new GameObject[2];   //弾丸の種類
