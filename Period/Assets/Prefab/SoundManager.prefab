@@ -49,70 +49,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmParameter:
-  - bgmEum: 0
-    bgm: {fileID: 8300000, guid: 52fdc0c25ab8c374f8957eba7c87e051, type: 3}
-    volume: 1
   - bgmEum: 1
-    bgm: {fileID: 8300000, guid: ea807533462a9ec4c92ec7087b4e12ca, type: 3}
+    bgm: {fileID: 8300000, guid: 363f9a70d37f72749933df3b5e9776b6, type: 3}
     volume: 1
   - bgmEum: 2
-    bgm: {fileID: 8300000, guid: 2160b489d0294e040891f08959d199b0, type: 3}
-    volume: 1
-  - bgmEum: 3
-    bgm: {fileID: 8300000, guid: 8519b9353dd16dc42b2512167a64185a, type: 3}
-    volume: 1
-  - bgmEum: 4
-    bgm: {fileID: 8300000, guid: 8e4ee40df96fbd04cad2b7edf2acc9a1, type: 3}
-    volume: 1
-  - bgmEum: 5
-    bgm: {fileID: 8300000, guid: 8e4ee40df96fbd04cad2b7edf2acc9a1, type: 3}
-    volume: 1
-  - bgmEum: 5
-    bgm: {fileID: 8300000, guid: af0c59c5c8a91de4b97f3fceb3dd881d, type: 3}
-    volume: 1
-  - bgmEum: 6
-    bgm: {fileID: 8300000, guid: df07c86c6c400074fa33c402bed29062, type: 3}
+    bgm: {fileID: 8300000, guid: 6068d57ec473c6843b15e392df55a6dd, type: 3}
     volume: 1
   seParameter:
   - seEnum: 0
-    se: {fileID: 8300000, guid: 83aab3ad0e36e0d4aa31a8eae6287151, type: 3}
+    se: {fileID: 8300000, guid: 5de09ddc2f673ba4282291a126759b4d, type: 3}
     volume: 0.5
   - seEnum: 1
-    se: {fileID: 8300000, guid: 42c89d062cd42104a8f177c83816baf0, type: 3}
+    se: {fileID: 8300000, guid: d7e915db3b95da249b3fc28959191a77, type: 3}
     volume: 0.5
-  - seEnum: 2
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 3
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 4
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 5
-    se: {fileID: 8300000, guid: d88af855a334b2348aa8ac470c478cf9, type: 3}
-    volume: 1
-  - seEnum: 6
-    se: {fileID: 8300000, guid: 93813ad4f46e2b4449727ff9f4c6a311, type: 3}
-    volume: 0.5
-  - seEnum: 7
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 8
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 9
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 10
-    se: {fileID: 0}
-    volume: 0.5
-  - seEnum: 11
-    se: {fileID: 8300000, guid: baaeac70b06d78247bd92a6abf9a59ea, type: 3}
-    volume: 0.5
-  - seEnum: 12
-    se: {fileID: 8300000, guid: 292385854992ad144a8be65885055149, type: 3}
-    volume: 0.2
   feedInSetting:
     serializedVersion: 2
     m_Curve:

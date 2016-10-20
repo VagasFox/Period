@@ -3,11 +3,11 @@ Cmd: getPlatforms
 Cmd: preprocess
   insize=2933 outsize=203 ok=1
 Cmd: preprocess
-  insize=889 outsize=229 ok=1
+  insize=836 outsize=215 ok=1
 Cmd: preprocess
   insize=6745 outsize=291 ok=1
 Cmd: preprocess
-  insize=586 outsize=194 ok=1
+  insize=552 outsize=184 ok=1
 Cmd: preprocess
   insize=678 outsize=208 ok=1
 Cmd: preprocess

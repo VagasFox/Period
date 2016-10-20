@@ -4,32 +4,17 @@ using System.Collections.Generic;
 
 public enum BGM_Enum
 {
-    TITLE = 0,              //タイトル
-    MORNING,                //朝
-    NIGHT,                  //夜
-    ENDING1,                //エンディング1,2
-    ENDING3,                //エンディング3
-    ENDING4,                //エンディング4
-    OPNING,                 //オープニング
-    None,					//何も再生していない
+    TITLE = 0,          //タイトル
+    PLAY_1,             //ゲームプレイ中１
+    PLAY_2,             //ゲームプレイ中２
+    ENDING,             //エンディング
+    None,				//何も再生していない
 }
 
 public enum SE_Enum
 {
-    WIND = 0,
-    DECISION,       //決定音
-    TURN_OVER,      //めくる音
-    BUBBLE,         //シャボン玉
-    HIT,            //衝突音
-    FLY_BIRD,       //鳥のはばたき
-    FLY_CROW,       //カラスのはばたき
-    CITY_NOISE,     //都会の喧騒
-    FIREWORK,       //花火
-    FLY_BEE,        //蜂
-    FLY_BAT,        //こうもり
-    HELICOPTER,     //ヘリ
-    PLANE,			//飛行機
-
+    SHOT_1 = 0,         //弾発射音(ビーム系)
+    SHOT_2,             //弾発射音(弾系)
 }
 public class SoundManager : MonoBehaviour
 {

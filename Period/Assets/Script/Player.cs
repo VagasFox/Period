@@ -30,6 +30,10 @@ public class Player : MonoBehaviour {
         rectTransform = numWindow.GetComponent<RectTransform>();
     }
 
+    void Start() {
+        SoundManager.PlayBGM(BGM_Enum.PLAY_2);
+    }
+
     void Update()
     {
         ViewLabel();
@@ -85,7 +89,7 @@ public class Player : MonoBehaviour {
 
         //numWindow(Label)の座標の更新
         var worldCamera = Camera.main;
-        var targetPos = new Vector3(hitObj.transform.position.x,
+        var targetPos = new Vector3(hitObj.transform.position.x-1.5f,
                                     hitObj.transform.position.y,
                                     hitObj.transform.position.z);
 
@@ -150,6 +154,7 @@ public class Player : MonoBehaviour {
         {
             GameObject bullets = GameObject.Instantiate(bulletList[Convert.ToInt32(g_stateFlag)]) as GameObject;
 
+            SoundManager.PlaySE(SE_Enum.SHOT_2, muzzle.gameObject);
             Vector3 force;
             force = this.gameObject.transform.forward * speed;
 
