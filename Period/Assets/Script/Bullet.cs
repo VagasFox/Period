@@ -51,6 +51,7 @@ public class Bullet : MonoBehaviour {
         {
             GimmickState colState = col.collider.GetComponent<GimmickState>();
 
+            if (colState == null) return;
             if (eBulletType == Enum_BulletType.Multi)
             {
                 colState.gimmickNum = BulletMultiplication(colState.gimmickNum);
@@ -60,7 +61,7 @@ public class Bullet : MonoBehaviour {
             {
                 colState.gimmickNum = BulletDivision(colState.gimmickNum);
             }
-                
+
             Destroy(this.gameObject);
         } else {
             Destroy(this.gameObject);

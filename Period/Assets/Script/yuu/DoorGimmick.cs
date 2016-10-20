@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class DoorGimmick : MonoBehaviour {
-    public GameObject LeftDoor;
-    public GameObject RightDoor;
+    [SerializeField] private GameObject LeftDoor;
+    [SerializeField] private GameObject RightDoor;
     
     public double minPassNum = 0;
     public double maxPassNum = 10;

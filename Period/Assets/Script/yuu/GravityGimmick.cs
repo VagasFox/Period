@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GravityGimmick : MonoBehaviour {
-    public float gravity;
+    private float gravity;
 
     GimmickStateTypeD GimStateTypeD;
 	// Use this for initialization
