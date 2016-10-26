@@ -92,7 +92,7 @@ ModelImporter:
     4300020: pCylinder18
     4300022: pCube16
     4300024: polySurface3_polySurface1_polySurface6_group2_pCylinder17
-    7400000: Take 001
+    7400000: RRun
     9500000: //RootNode
     13700000: pCube1
     13700002: pCube16
@@ -127,7 +127,109 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: RRun
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/BackWheel
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HeadTop
+        weight: 1
+      - path: Body/Head/LeftFlag
+        weight: 1
+      - path: Body/Head/LeftFlag/LeftFlag1
+        weight: 1
+      - path: Body/Head/LeftFlag/LeftFlag1/LeftFlagTop
+        weight: 1
+      - path: Body/Head/RightFlag
+        weight: 1
+      - path: Body/Head/RightFlag/RightFlag1
+        weight: 1
+      - path: Body/Head/RightFlag/RightFlag1/RightFlagTop
+        weight: 1
+      - path: Body/LeftArm
+        weight: 1
+      - path: Body/LeftArm/LeftHand
+        weight: 1
+      - path: Body/LeftArm/LeftHand/LeftGun
+        weight: 1
+      - path: Body/LeftArm/LeftHand/LeftGun/LeftGunTop
+        weight: 1
+      - path: Body/LeftFrontWheel
+        weight: 1
+      - path: Body/LeftFrontWheel/LeftFrontWheel1
+        weight: 1
+      - path: Body/RightArm
+        weight: 1
+      - path: Body/RightArm/RightHand
+        weight: 1
+      - path: Body/RightArm/RightHand/RightGun
+        weight: 1
+      - path: Body/RightArm/RightHand/RightGun/RightGunTop
+        weight: 1
+      - path: Body/RightFrontWheel
+        weight: 1
+      - path: Body/RightFrontWheel/RightFrontWheel1
+        weight: 1
+      - path: RoboBody
+        weight: 1
+      - path: RoboBody/pCube1
+        weight: 1
+      - path: RoboBody/pCube16
+        weight: 1
+      - path: RoboBody/pCylinder3
+        weight: 1
+      - path: RoboBody/pCylinder4
+        weight: 1
+      - path: RoboBody/pCylinder15
+        weight: 1
+      - path: RoboBody/pCylinder18
+        weight: 1
+      - path: RoboBody/pCylinder19
+        weight: 1
+      - path: RoboBody/polySurface1
+        weight: 1
+      - path: RoboBody/polySurface3
+        weight: 1
+      - path: RoboBody/polySurface3_polySurface1_polySurface6_group2_pCylinder17
+        weight: 1
+      - path: RoboBody/polySurface6
+        weight: 1
+      - path: RoboBody/pPipe1
+        weight: 1
+      - path: RoboBody/pPipe2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

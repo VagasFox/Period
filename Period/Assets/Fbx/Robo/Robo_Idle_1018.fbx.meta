@@ -92,7 +92,7 @@ ModelImporter:
     4300020: pCylinder18
     4300022: pCube16
     4300024: polySurface3_polySurface1_polySurface6_group2_pCylinder17
-    7400000: Take 001
+    7400000: RIdle
     9500000: //RootNode
     13700000: pCube1
     13700002: pCube16
@@ -129,7 +129,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: RIdle
       takeName: Take 001
       firstFrame: 1
       lastFrame: 48
