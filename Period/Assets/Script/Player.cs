@@ -23,7 +23,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float speed = 1000;                            //弾の発射速度
 
-    private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+    private bool g_stateFlag = false;                      //Enum_Gimmickstateの変更用
+    private Animator animator;
 
     void Awake()
     {
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour {
 
     void Start() {
         SoundManager.PlayBGM(BGM_Enum.PLAY_2);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -39,6 +41,30 @@ public class Player : MonoBehaviour {
         ViewLabel();
         PlayerRay();
         ShotBullet();
+        PlayerMove();
+    }
+
+
+    /// <summary>
+    /// Playerの移動
+    /// </summary>
+    void PlayerMove() {
+        if (Input.GetKey("up"))
+        {
+            transform.position += transform.forward * 0.1f;
+            animator.SetBool("Run", true);
+        }
+        else {
+            animator.SetBool("Run", false);
+        }
+        if (Input.GetKey("right"))
+        {
+            transform.Rotate(0, 5, 0);
+        }
+        if (Input.GetKey("left"))
+        {
+            transform.Rotate(0, -5, 0);
+        }
     }
 
     /// <summary>
@@ -107,7 +133,19 @@ public class Player : MonoBehaviour {
         }
         //ギミックの種類判断と、Textに表示するヒント文
         Enum_GimmickState Gimmick = hitObj.GetComponent<GimmickState>().eGimState;
-        switch(Gimmick)
+        
+        CheckGimmickState(Gimmick);
+
+        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
+        hitObj.GetComponent<GimmickState>().gimmickNum = decimal.Parse(gimmickNumDisplay);
+    }
+
+    /// <summary>
+    /// 取得したEnum_GimmickStateから表示テキストを確定する
+    /// </summary>
+    /// <param name="eGim">取得したEnum_GimmickState</param>
+    void CheckGimmickState(Enum_GimmickState eGim) {
+        switch (eGim)
         {
             case Enum_GimmickState.GRAVITY:
                 HintText1 = "重力:";
@@ -134,11 +172,6 @@ public class Player : MonoBehaviour {
                 HintText2 = "";
                 break;
         }
-
-        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
-        hitObj.GetComponent<GimmickState>().gimmickNum = decimal.Parse(gimmickNumDisplay);
-
-
     }
 
     /// <summary>
