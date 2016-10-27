@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float speed = 1000;                            //弾の発射速度
 
-    private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+    public bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
 
     void Awake()
     {
@@ -37,8 +37,12 @@ public class Player : MonoBehaviour {
     void Update()
     {
         ViewLabel();
-        PlayerRay();
+       
         ShotBullet();
+    }
+
+    void FixedUpdate() {
+        PlayerRay();
     }
 
     /// <summary>
@@ -149,11 +153,6 @@ public class Player : MonoBehaviour {
     }
 
 
-    void ShowLaserPointer() {
-
-
-    }
-
     /// <summary>
     /// 弾の発射と弾の種類変更
     /// </summary>
@@ -161,6 +160,14 @@ public class Player : MonoBehaviour {
     {
         //弾の種類変更
         if (Input.GetKeyDown(KeyCode.Z)) g_stateFlag = !g_stateFlag;
+
+        if (g_stateFlag) {
+            muzzle[0].gameObject.SetActive(false);
+            muzzle[1].gameObject.SetActive(true);
+        } else {
+            muzzle[0].gameObject.SetActive(true);
+            muzzle[1].gameObject.SetActive(false);
+        }
 
 
         //弾の発射
