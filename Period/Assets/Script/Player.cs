@@ -23,7 +23,9 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float speed = 1000;                            //弾の発射速度
 
-    public bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+    private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+
+    [SerializeField] private GameObject rayPoint;
 
     void Awake()
     {
@@ -31,13 +33,12 @@ public class Player : MonoBehaviour {
     }
 
     void Start() {
-        SoundManager.PlayBGM(BGM_Enum.PLAY_2);
+        SoundManager.PlayBGM(BGM_Enum.PLAY_1);
     }
 
     void Update()
     {
         ViewLabel();
-       
         ShotBullet();
     }
 
@@ -51,9 +52,9 @@ public class Player : MonoBehaviour {
     void PlayerRay()
     {
         //Rayの初期化
-        ray = new Ray(new Vector3(transform.position.x,
-                                  transform.position.y + 1f,
-                                  transform.position.z), transform.forward);
+        ray = new Ray(new Vector3(rayPoint.transform.position.x,
+                                  rayPoint.transform.position.y,
+                                  rayPoint.transform.position.z), rayPoint.transform.forward);
 
         Debug.DrawRay(ray.origin, ray.direction, Color.red, 20.0f);
         if (Physics.Raycast(ray, out rayHit, 20.0f))

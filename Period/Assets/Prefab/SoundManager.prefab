@@ -51,17 +51,17 @@ MonoBehaviour:
   bgmParameter:
   - bgmEum: 1
     bgm: {fileID: 8300000, guid: 363f9a70d37f72749933df3b5e9776b6, type: 3}
-    volume: 1
+    volume: 0.5
   - bgmEum: 2
     bgm: {fileID: 8300000, guid: 6068d57ec473c6843b15e392df55a6dd, type: 3}
-    volume: 1
+    volume: 0.5
   seParameter:
-  - seEnum: 0
-    se: {fileID: 8300000, guid: 5de09ddc2f673ba4282291a126759b4d, type: 3}
-    volume: 0.5
   - seEnum: 1
+    se: {fileID: 8300000, guid: 5de09ddc2f673ba4282291a126759b4d, type: 3}
+    volume: 1
+  - seEnum: 0
     se: {fileID: 8300000, guid: d7e915db3b95da249b3fc28959191a77, type: 3}
-    volume: 0.5
+    volume: 1
   feedInSetting:
     serializedVersion: 2
     m_Curve:
