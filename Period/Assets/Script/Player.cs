@@ -146,6 +146,11 @@ public class Player : MonoBehaviour {
                 HintText2 = "";
                 break;
 
+            case Enum_GimmickState.SIZE:
+                HintText1 = "大きさ";
+                HintText2 = "";
+                break;
+
             case Enum_GimmickState.NONE:
                 HintText1 = "";
                 HintText2 = "";

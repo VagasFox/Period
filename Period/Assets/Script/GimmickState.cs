@@ -11,6 +11,7 @@ public enum Enum_GimmickState
     DOOR,       //ドア
     LIGHT,      //ライト
     ROTATE,     //回転
+    SIZE,       //大きさ
     NONE,       //何も無し
 }
 
@@ -29,6 +30,11 @@ public class GimmickState : MonoBehaviour {
     {
         gimmickNum = (decimal)gimmickNumber;
         gimmickNumCount = gimmickNum.ToString().Length + digit;
+
+        if (gimmickNumCount <= 2)
+        {
+            gimmickNumCount = 3;
+        }
     }
 
     void Update()
