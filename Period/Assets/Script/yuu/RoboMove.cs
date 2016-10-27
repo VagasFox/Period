@@ -21,6 +21,7 @@ public class RoboMove : MonoBehaviour {
         DirectMove.y -= gravity * 60 * Time.deltaTime;
         controller.Move(DirectMove * Time.deltaTime);
         CharaRotation();
+
 	}
 
     void ActMove()

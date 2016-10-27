@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private GameObject[] bulletList = new GameObject[2];   //弾丸の種類
     [SerializeField]
-    private Transform muzzle;                              //弾丸発射点
+    private Transform[] muzzle = new Transform[2];         //弾丸発射点
     [SerializeField]
     private float speed = 1000;                            //弾の発射速度
 
@@ -107,7 +107,19 @@ public class Player : MonoBehaviour {
         }
         //ギミックの種類判断と、Textに表示するヒント文
         Enum_GimmickState Gimmick = hitObj.GetComponent<GimmickState>().eGimState;
-        switch(Gimmick)
+
+        SetHintText(Gimmick);
+
+        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
+        hitObj.GetComponent<GimmickState>().gimmickNum = decimal.Parse(gimmickNumDisplay);
+    }
+
+    /// <summary>
+    /// 取得したEnum_GimmickStateからヒント文を設定する
+    /// </summary>
+    /// <param name="eGim">取得したEnum_GimmickState</param>
+    void SetHintText(Enum_GimmickState eGim) {
+        switch (eGim)
         {
             case Enum_GimmickState.GRAVITY:
                 HintText1 = "重力:";
@@ -134,9 +146,10 @@ public class Player : MonoBehaviour {
                 HintText2 = "";
                 break;
         }
+    }
 
-        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
-        hitObj.GetComponent<GimmickState>().gimmickNum = decimal.Parse(gimmickNumDisplay);
+
+    void ShowLaserPointer() {
 
 
     }
@@ -149,18 +162,18 @@ public class Player : MonoBehaviour {
         //弾の種類変更
         if (Input.GetKeyDown(KeyCode.Z)) g_stateFlag = !g_stateFlag;
 
+
         //弾の発射
         if (Input.GetKeyDown(KeyCode.Return))
         {
             GameObject bullets = GameObject.Instantiate(bulletList[Convert.ToInt32(g_stateFlag)]) as GameObject;
 
-            SoundManager.PlaySE(SE_Enum.SHOT_2, muzzle.gameObject);
+            SoundManager.PlaySE(SE_Enum.SHOT_2, muzzle[Convert.ToInt32(g_stateFlag)].gameObject);
             Vector3 force;
             force = this.gameObject.transform.forward * speed;
 
             bullets.GetComponent<Rigidbody>().AddForce(force);
-            bullets.transform.position = muzzle.position;
+            bullets.transform.position = muzzle[Convert.ToInt32(g_stateFlag)].position;
         }
     }
-
 }
