@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class RoboMove : MonoBehaviour {
-    public float speed = 4.0f;
-    public float rotateSpeed = 5;
+    //こっちはCharacterControllerを使用するタイプ
+    public float speed = 6.0f;
+    public float rotateSpeed = 120;
     private float rotate;
     public float gravity = 0.3f;
     private CharacterController controller;
