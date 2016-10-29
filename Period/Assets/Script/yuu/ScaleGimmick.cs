@@ -18,7 +18,7 @@ public class ScaleGimmick : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        gimState = gameObject.GetComponent<GimmickState>();
+        gimState = GetComponent<GimmickState>();
         objScale = transform.localScale;
     }
 

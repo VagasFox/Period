@@ -7,7 +7,7 @@ public class GravityGimmick : MonoBehaviour {
     GimmickState gimState;
 	// Use this for initialization
 	void Start () {
-        gimState = gameObject.GetComponent<GimmickState>();
+        gimState = GetComponent<GimmickState>();
         gravity = (float)gimState.gimmickNum;
 	}
 	

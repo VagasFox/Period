@@ -19,7 +19,7 @@ public class DoorGimmick : MonoBehaviour {
     GimmickState gimState;
 	// Use this for initialization
 	void Start () {
-        gimState = gameObject.GetComponent<GimmickState>();
+        gimState = GetComponent<GimmickState>();
 
         minPass = (decimal)minPassNum;
         maxPass = (decimal)maxPassNum;

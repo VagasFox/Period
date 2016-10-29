@@ -16,7 +16,7 @@ public class RotationGimmick : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        gimState = gameObject.GetComponent<GimmickState>();
+        gimState = GetComponent<GimmickState>();
     }
 
     // Update is called once per frame

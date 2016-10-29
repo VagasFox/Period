@@ -612,7 +612,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 707422467}
   m_Layer: 0
-  m_Name: Test_EnemyRootPosition (1)
+  m_Name: Test_EnemyRoot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +800,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 795396948}
   m_Layer: 0
-  m_Name: Test_EnemyRootPosition (2)
+  m_Name: Test_EnemyRoot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1702353397}
   m_Layer: 0
-  m_Name: Test_EnemyRootPosition
+  m_Name: Test_EnemyRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2397,7 +2397,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1702852140}
   m_Layer: 0
-  m_Name: Test_EnemyRootPosition (3)
+  m_Name: Test_EnemyRoot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
