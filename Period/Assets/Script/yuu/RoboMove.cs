@@ -4,9 +4,11 @@ using System.Collections;
 public class RoboMove : MonoBehaviour {
     //こっちはCharacterControllerを使用するタイプ
     public float speed = 6.0f;
+    public float jumpSpeed = 5.0f;
     public float rotateSpeed = 120;
+    private float yMove;
     private float rotate;
-    public float gravity = 0.3f;
+    public float gravity = 9.8f;
     private CharacterController controller;
     private Vector3 DirectMove = Vector3.zero;
 
@@ -19,7 +21,7 @@ public class RoboMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ActMove();
-        DirectMove.y -= gravity * 60 * Time.deltaTime;
+        DirectMove.y -= gravity * Time.deltaTime;
         controller.Move(DirectMove * Time.deltaTime);
         CharaRotation();
 
@@ -27,10 +29,24 @@ public class RoboMove : MonoBehaviour {
 
     void ActMove()
     {
+        yMove = DirectMove.y;
         DirectMove = transform.forward * Input.GetAxisRaw("Vertical") * speed;
-        
-        //DirectMove.x = Input.GetAxisRaw("Horizontal") * speed;
+        DirectMove.y += yMove;
+
+        //runアニメーションを作動させる
         charaAnim.SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical")));
+        
+        //地上に居る時の判定（移動もこの中に入れてもいいかもしれない）
+        if (controller.isGrounded)
+        {
+            //地上に居る時は下方向への加速が増えて行かないようにする。
+            DirectMove.y = 0;
+            
+            if (Input.GetButton("Jump"))
+            {
+                DirectMove.y = jumpSpeed;
+            }
+        }
     }
 
     void CharaRotation()

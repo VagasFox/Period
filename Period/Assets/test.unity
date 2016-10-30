@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692528, g: 0.49678677, b: 0.57508475, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -297,6 +297,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 326576773}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &376146883 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20000012724915896, guid: 1c34065779008254487b17446ec13af4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1358828665}
 --- !u!1 &464164612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1733,25 @@ Prefab:
       propertyPath: numWindow
       value: 
       objectReference: {fileID: 1209764762}
+    - target: {fileID: 114000012802408658, guid: 1c34065779008254487b17446ec13af4,
+        type: 2}
+      propertyPath: gravity
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 143000012250323156, guid: 1c34065779008254487b17446ec13af4,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012802408658, guid: 1c34065779008254487b17446ec13af4,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013794171708, guid: 1c34065779008254487b17446ec13af4, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c34065779008254487b17446ec13af4, type: 2}
   m_IsPrefabParent: 0
@@ -1773,7 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4460346c13cfb74b9ebb6dc12da3681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gimmickNumber: 9.78
+  gimmickNumber: 9.8
   gimmickNumCount: 0
   digit: 1
   eGimState: 0
@@ -3235,7 +3259,7 @@ MonoBehaviour:
   m_ShadowmapMode: 0
   m_Cameras:
   - {fileID: 1792962074}
-  m_CurrentCamera: {fileID: 0}
+  m_CurrentCamera: {fileID: 376146883}
   m_Size: {x: 10, y: 10, z: 20}
   m_SpotNear: 0.1
   m_SpotFar: 1
