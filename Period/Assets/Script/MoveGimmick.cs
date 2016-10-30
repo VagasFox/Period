@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MoveGimmick : MonoBehaviour {
     GimmickState gimState;
-    [SerializeField] private decimal standingNumber;
+    [SerializeField] private float standingNum;
+    private decimal standingNumber;
 
     [SerializeField] private bool endless = false;
     private bool moving = false;
@@ -21,6 +22,8 @@ public class MoveGimmick : MonoBehaviour {
     void Start () {
         gimState = GetComponent<GimmickState>();
         startPos = transform.position;
+
+        standingNumber = (decimal)standingNum;
     }
 
 	void Update () {
