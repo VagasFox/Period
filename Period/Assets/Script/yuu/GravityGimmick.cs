@@ -13,6 +13,7 @@ public class GravityGimmick : MonoBehaviour {
         gimState = GetComponent<GimmickState>();
         gravity = (float)gimState.gimmickNum;
         PLGravity = GameObject.FindGameObjectWithTag("Player").GetComponent<RoboMove>();
+        gimState.gimmickNum = (decimal)PLGravity.gravity;
 	}
 	
 	// Update is called once per frame

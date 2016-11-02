@@ -21,7 +21,20 @@ public class RoboMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ActMove();
-        DirectMove.y -= gravity * Time.deltaTime;
+
+        //頂点まで来た後に下に落ちるのを早める場合
+        if (DirectMove.y >= 2)
+        {
+            DirectMove.y -= gravity * Time.deltaTime;
+        }
+        else if(gravity <= 9.8f)
+        {
+            DirectMove.y -= gravity * 5 * Time.deltaTime;
+        }
+        
+        //常に同じ重力をかける場合
+        //DirectMove.y -= gravity * Time.deltaTime;
+
         controller.Move(DirectMove * Time.deltaTime);
         CharaRotation();
 
