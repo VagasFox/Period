@@ -23,9 +23,13 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float speed = 1000;                            //弾の発射速度
 
+<<<<<<< HEAD
     private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
 
     [SerializeField] private GameObject rayPoint;
+=======
+    public bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+>>>>>>> parent of d1c63ec... no message
 
     void Awake()
     {
