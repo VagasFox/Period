@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScaleGimmick : MonoBehaviour {
     [SerializeField]
-    private GameObject GimObj;
+    private GameObject[] GimObj;
     private Vector3 objScale;
     /*[SerializeField]*/
     public bool ScaleX;
@@ -40,6 +40,9 @@ public class ScaleGimmick : MonoBehaviour {
             zscale = scale;
         }
 
-        GimObj.transform.localScale = new Vector3(objScale.x * xscale, objScale.y * yscale, objScale.z * zscale);
+        for (int i = 0; i < GimObj.Length; i++)
+        {
+            GimObj[i].transform.localScale = new Vector3(objScale.x * xscale, objScale.y * yscale, objScale.z * zscale);
+        }
     }
 }

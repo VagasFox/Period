@@ -4,13 +4,13 @@ using System.Collections;
 public class RotationGimmick : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Bridge;
+    private GameObject[] RotateGim;
     /*[SerializeField]*/
     private float rotation;
 
 
-    float r_time;
-    public float timeSpped = 3f;
+    //float r_time;
+    //public float timeSpped = 3f;
 
     GimmickState gimState;
     // Use this for initialization
@@ -23,6 +23,9 @@ public class RotationGimmick : MonoBehaviour
     void Update()
     {
         rotation = (float)gimState.gimmickNum;
-        Bridge.transform.rotation = Quaternion.Euler(0, rotation, 0);
+        for (int i = 0; i < RotateGim.Length; i++)
+        {
+            RotateGim[i].transform.rotation = Quaternion.Euler(0, rotation, 0);
+        }
     }
 }
