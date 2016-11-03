@@ -743,7 +743,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011280483758}
-  m_LocalRotation: {x: 0.703991, y: 0.70971626, z: 0.018625882, w: 0.018777357}
+  m_LocalRotation: {x: 0.70399106, y: 0.7097163, z: 0.018625883, w: 0.01877736}
   m_LocalPosition: {x: -0.084324636, y: -1.5758709e-17, z: -0.0043598264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1247,7 +1247,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010443032352}
-  m_LocalRotation: {x: 0.703991, y: 0.70971626, z: 0.018625882, w: 0.018777357}
+  m_LocalRotation: {x: 0.70399106, y: 0.7097163, z: 0.018625883, w: 0.01877736}
   m_LocalPosition: {x: 0.08432461, y: 5.3273767e-17, z: 0.004359825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1483,6 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  jumpSpeed: 5
   rotateSpeed: 120
   gravity: 0.3
   charaAnim: {fileID: 95000011496553504}
