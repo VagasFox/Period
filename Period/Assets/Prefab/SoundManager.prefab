@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmParameter:
   - bgmEum: 1
-    bgm: {fileID: 8300000, guid: 363f9a70d37f72749933df3b5e9776b6, type: 3}
+    bgm: {fileID: 8300000, guid: d8873e2784579974da0de890622401f5, type: 3}
     volume: 0.5
   - bgmEum: 2
     bgm: {fileID: 8300000, guid: 6068d57ec473c6843b15e392df55a6dd, type: 3}
@@ -61,6 +61,15 @@ MonoBehaviour:
     volume: 1
   - seEnum: 0
     se: {fileID: 8300000, guid: d7e915db3b95da249b3fc28959191a77, type: 3}
+    volume: 1
+  - seEnum: 2
+    se: {fileID: 8300000, guid: 1dc63b43cd3883543a91607e122b8fdf, type: 3}
+    volume: 1
+  - seEnum: 4
+    se: {fileID: 8300000, guid: 86d0253bc9c7f0642a8f8f4f4c63699b, type: 3}
+    volume: 1
+  - seEnum: 3
+    se: {fileID: 8300000, guid: 6d510c0e1e9366c42a47ea46d9132d1e, type: 3}
     volume: 1
   feedInSetting:
     serializedVersion: 2

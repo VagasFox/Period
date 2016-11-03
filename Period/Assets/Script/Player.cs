@@ -205,6 +205,7 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("Needle"))
         {
+            SoundManager.PlaySE(SE_Enum.NEEDLE, this.gameObject);
             transform.position = firstPos;
         }
     }

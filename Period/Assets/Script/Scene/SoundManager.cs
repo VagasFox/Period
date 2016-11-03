@@ -15,6 +15,9 @@ public enum SE_Enum
 {
     SHOT_1 = 0,         //弾発射音(ビーム系)
     SHOT_2,             //弾発射音(弾系)
+    NEEDLE,
+    WIND,
+    ROCK,
 }
 public class SoundManager : MonoBehaviour
 {
