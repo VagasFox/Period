@@ -23,11 +23,14 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float speed = 1000;                            //弾の発射速度
 
-    public bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+    public bool g_stateFlag = false;                       //Enum_Gimmickstateの変更用
+
+    Vector3 firstPos;
 
     void Awake()
     {
         rectTransform = numWindow.GetComponent<RectTransform>();
+        firstPos = transform.position;
     }
 
     void Start() {
@@ -39,6 +42,10 @@ public class Player : MonoBehaviour {
         ViewLabel();
        
         ShotBullet();
+
+        if (transform.position.y < -5f) {
+            transform.position = firstPos; 
+        }
     }
 
     void FixedUpdate() {
