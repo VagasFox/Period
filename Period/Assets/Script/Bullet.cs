@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour {
 
     void Start()
     {
+        SoundManager.PlaySE(SE_Enum.SHOT_1, this.gameObject);
     }
 
     void Update()

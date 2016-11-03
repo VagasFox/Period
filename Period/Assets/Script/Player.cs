@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     private Ray ray;
     private RaycastHit rayHit;
     [SerializeField]
@@ -25,7 +26,8 @@ public class Player : MonoBehaviour {
 
     private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
 
-    [SerializeField] private GameObject rayPoint;
+    [SerializeField]
+    private GameObject rayPoint;
     Vector3 firstPos;
 
     void Awake()
@@ -34,7 +36,8 @@ public class Player : MonoBehaviour {
         firstPos = transform.position;
     }
 
-    void Start() {
+    void Start()
+    {
         SoundManager.PlayBGM(BGM_Enum.PLAY_1);
     }
 
@@ -46,7 +49,8 @@ public class Player : MonoBehaviour {
         if (transform.position.y < -5f) transform.position = firstPos;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         PlayerRay();
     }
 
@@ -98,7 +102,7 @@ public class Player : MonoBehaviour {
 
         //numWindow(Label)の座標の更新
         var worldCamera = Camera.main;
-        var targetPos = new Vector3(hitObj.transform.position.x-1.5f,
+        var targetPos = new Vector3(hitObj.transform.position.x - 1.5f,
                                     hitObj.transform.position.y,
                                     hitObj.transform.position.z);
 
@@ -127,7 +131,8 @@ public class Player : MonoBehaviour {
     /// 取得したEnum_GimmickStateからヒント文を設定する
     /// </summary>
     /// <param name="eGim">取得したEnum_GimmickState</param>
-    void SetHintText(Enum_GimmickState eGim) {
+    void SetHintText(Enum_GimmickState eGim)
+    {
         switch (eGim)
         {
             case Enum_GimmickState.GRAVITY:
@@ -171,10 +176,12 @@ public class Player : MonoBehaviour {
         //弾の種類変更
         if (Input.GetKeyDown(KeyCode.Z)) g_stateFlag = !g_stateFlag;
 
-        if (g_stateFlag) {
+        if (g_stateFlag)
+        {
             muzzle[0].gameObject.SetActive(false);
             muzzle[1].gameObject.SetActive(true);
-        } else {
+        }
+        else {
             muzzle[0].gameObject.SetActive(true);
             muzzle[1].gameObject.SetActive(false);
         }
@@ -185,7 +192,7 @@ public class Player : MonoBehaviour {
         {
             GameObject bullets = GameObject.Instantiate(bulletList[Convert.ToInt32(g_stateFlag)]) as GameObject;
 
-            SoundManager.PlaySE(SE_Enum.SHOT_2, muzzle[Convert.ToInt32(g_stateFlag)].gameObject);
+            //SoundManager.PlaySE(SE_Enum.SHOT_2, muzzle[Convert.ToInt32(g_stateFlag)].gameObject);
             Vector3 force;
             force = this.gameObject.transform.forward * speed;
 
@@ -193,4 +200,13 @@ public class Player : MonoBehaviour {
             bullets.transform.position = muzzle[Convert.ToInt32(g_stateFlag)].position;
         }
     }
+
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Needle"))
+        {
+            transform.position = firstPos;
+        }
+    }
+
 }

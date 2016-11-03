@@ -12,6 +12,7 @@ public enum Enum_GimmickState
     LIGHT,      //ライト
     ROTATE,     //回転
     SIZE,       //大きさ
+    NEEDLE,     //とげ
     NONE,       //何も無し
 }
 
