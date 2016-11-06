@@ -3,30 +3,61 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-    public Transform[] wayPoints;
-    public int currentRoot;
+    public Transform[] wayPoints;                   //通る道
+    public int currentRoot;                         //通る道の番号
+    NavMeshAgent agent;                             //EnemyについているNavMeshAgent
+    private Ray ray;                                //プレイヤー探索用のRay
+    private RaycastHit rayHit = new RaycastHit();   //プレイヤー探索用のRaycastHit
+    private GameObject target;                      //追いかけるターゲット
 
-    private Ray ray;
-    private RaycastHit rayHit;
-    public bool isDiscovery = false;
-    public GameObject target;
+    [SerializeField]
+    private float rayDistance = 30f;                //Rayの長さ
+    private float trackingCount = 0;    
 
-    float time;
-    public float distancePoint = 5f;
+    [SerializeField]
+    private float giveUpCount = 10f;                //追跡をあきらめるまでの秒数
+    [SerializeField]
+    private float distancePoint = 5f;               //追跡を諦める距離
+
+    public enum EnemyState {
+        Patrol, //巡回
+        Chase   //追跡
+    }
+    EnemyState state = EnemyState.Patrol;
+    EnemyState nextState;
 
     void Start() {
-        
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = target.transform.position;
-        //Patrol();
-        //SearchTarget();
+        switch (state)
+        {
+            case EnemyState.Patrol:
+                Patroling();
+                break;
+            case EnemyState.Chase:
+                Chasing();
+                break;
+        }
 
-        //if (!isDiscovery) Patrol();
-        //else              Tracking();        
+        if (state != nextState)
+        {
+            state = nextState;
+            switch (state)
+            {
+                case EnemyState.Patrol:
+                    Patroling();
+                    break;
+                case EnemyState.Chase:
+                    Chasing();
+                    break;
+
+            }
+        }
+
+        SearchTarget();
     }
 
     void SearchTarget()
@@ -34,17 +65,44 @@ public class Enemy : MonoBehaviour {
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction, Color.red, 20.0f);
 
-        if (Physics.Raycast(ray, out rayHit, 50.0f))
+        if (Physics.Raycast(ray, out rayHit, rayDistance))
         {
-            if (rayHit.collider.CompareTag("Player")) {
+            if (rayHit.collider.CompareTag("Player"))
+            {
                 target = rayHit.collider.gameObject;
-                isDiscovery = true;
+                ChangeState(EnemyState.Chase);
+            }
+
+            if (state == EnemyState.Chase &&
+                !rayHit.collider.CompareTag("Player"))
+            {
+                if (trackingCount < 10f)
+                {
+                    trackingCount += Time.deltaTime;
+
+                }
+                else
+                {
+                    ChangeState(EnemyState.Patrol);
+                    trackingCount = 0;
+                }
             }
         }
     }
 
-    //巡回
-    void Patrol() {
+    /// <summary>
+    /// EnemyStateの変更
+    /// </summary>
+    /// <param name="next"></param>
+    void ChangeState(EnemyState next)
+    {
+        this.nextState = next;
+    }
+
+    /// <summary>
+    /// 巡回
+    /// </summary>
+    void Patroling() {
         Vector3 pos = wayPoints[currentRoot].position;
 
         if (Vector3.Distance(transform.position, pos) < 0.5f)
@@ -55,24 +113,19 @@ public class Enemy : MonoBehaviour {
         GetComponent<NavMeshAgent>().SetDestination(pos);
     }
 
-    //追跡
-    void Tracking() {
-        GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+    /// <summary>
+    /// 追跡
+    /// </summary>
+    void Chasing()
+    {
+        Vector3 targetPos = target.transform.position;
 
+        agent.SetDestination(targetPos);
 
-        float distance = Vector3.Distance(transform.position, target.transform.position);
-
-        if (distance <= distancePoint || target.name == "Robo_Player_1027")
+        if (Vector3.Distance(transform.position, targetPos) > distancePoint)
         {
-            time += Time.deltaTime;
-            if (time > 3f)
-            {
-                time = 0f;
-                isDiscovery = false;
-            }
-        }
-        else {
-            time = 0f;
+            ChangeState(EnemyState.Patrol);
+            trackingCount = 0f;
         }
     }
 }
