@@ -13,6 +13,7 @@ public enum Enum_GimmickState
     ROTATE,     //回転
     SIZE,       //大きさ
     NEEDLE,     //とげ
+    WIND,       //風
     NONE,       //何も無し
 }
 

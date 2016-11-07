@@ -174,6 +174,16 @@ public class Player : MonoBehaviour
                 HintText2 = "";
                 break;
 
+            case Enum_GimmickState.NEEDLE:
+                HintText1 = "";
+                HintText2 = "";
+                break;
+
+            case Enum_GimmickState.WIND:
+                HintText1 = "風力";
+                HintText2 = "";
+                break;
+
             case Enum_GimmickState.NONE:
                 HintText1 = "";
                 HintText2 = "";

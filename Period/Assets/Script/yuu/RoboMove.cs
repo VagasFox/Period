@@ -10,7 +10,7 @@ public class RoboMove : MonoBehaviour {
     private float rotate;
     public float gravity = 9.8f;
     private CharacterController controller;
-    private Vector3 DirectMove = Vector3.zero;
+    public Vector3 DirectMove = Vector3.zero;
 
     public Animator charaAnim;
 	// Use this for initialization
