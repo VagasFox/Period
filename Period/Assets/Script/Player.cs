@@ -29,6 +29,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject rayPoint;
     Vector3 firstPos;
+    bool Respawn;
+    float feedOut;
+    GameObject BlackOut;
 
     void Awake()
     {
@@ -39,6 +42,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         SoundManager.PlayBGM(BGM_Enum.PLAY_1);
+        Respawn = false;
+        feedOut = 0;
     }
 
     void Update()
@@ -46,7 +51,23 @@ public class Player : MonoBehaviour
         ViewLabel();
         ShotBullet();
 
-        if (transform.position.y < -5f) transform.position = firstPos;
+        //一定の高さ以下になった時の復活処理
+        if (transform.position.y < -5f)
+        {
+            if (Respawn == false)
+            {
+                GetComponent<RoboMove>().enabled = false;
+                Respawn = true;
+            }
+
+            if (Respawn == true)
+            {
+                feedOut += Time.deltaTime * 0.3f;
+
+
+            }
+            transform.position = firstPos;
+        }
     }
 
     void FixedUpdate()
