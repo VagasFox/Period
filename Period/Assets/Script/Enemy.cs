@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 
     public Transform[] wayPoints;                   //通る道
     public int currentRoot;                         //通る道の番号
@@ -12,26 +13,33 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField]
     private float rayDistance = 30f;                //Rayの長さ
-    private float trackingCount = 0;    
+    private float trackingCount = 0;
 
     [SerializeField]
     private float giveUpCount = 10f;                //追跡をあきらめるまでの秒数
     [SerializeField]
     private float distancePoint = 5f;               //追跡を諦める距離
 
-    public enum EnemyState {
+    private bool stopFunction = false;              //動作不能フラグ
+
+    
+
+    public enum EnemyState
+    {
         Patrol, //巡回
         Chase   //追跡
     }
     EnemyState state = EnemyState.Patrol;
     EnemyState nextState;
 
-    void Start() {
+    void Start()
+    {
         agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
+        if (stopFunction) return;
         switch (state)
         {
             case EnemyState.Patrol:
@@ -76,7 +84,7 @@ public class Enemy : MonoBehaviour {
             if (state == EnemyState.Chase &&
                 !rayHit.collider.CompareTag("Player"))
             {
-                if (trackingCount < 10f)
+                if (trackingCount < giveUpCount)
                 {
                     trackingCount += Time.deltaTime;
 
@@ -102,7 +110,8 @@ public class Enemy : MonoBehaviour {
     /// <summary>
     /// 巡回
     /// </summary>
-    void Patroling() {
+    void Patroling()
+    {
         Vector3 pos = wayPoints[currentRoot].position;
 
         if (Vector3.Distance(transform.position, pos) < 0.5f)
@@ -126,6 +135,17 @@ public class Enemy : MonoBehaviour {
         {
             ChangeState(EnemyState.Patrol);
             trackingCount = 0f;
+        }
+    }
+
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("StopZone")) {
+            if (!stopFunction) {
+                stopFunction = true;
+
+                col.GetComponent<StopZone>().MoveDoor = stopFunction;
+            }  
         }
     }
 }
