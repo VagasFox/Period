@@ -52,6 +52,15 @@ public class Player : MonoBehaviour
         ViewLabel();
         ShotBullet();
         PlayerRespawn();
+
+        //一定の高さ以下になった時の復活処理
+        if (transform.position.y < -5f)
+        {
+            GetComponent<RoboMove>().enabled = false;
+            Respawn = true;
+        }
+
+        
     }
 
     void FixedUpdate()
@@ -211,35 +220,22 @@ public class Player : MonoBehaviour
     /// </summary>
     void PlayerRespawn()
     {
-        //一定の高さ以下になった時の復活処理
-        if (transform.position.y < -5f)
+        if (Respawn == true)
         {
-            if (Respawn == false)
+            feedOut += Time.deltaTime;
+            BlackOut.GetComponent<Image>().color = new Color(0, 0, 0, feedOut);
+            if (feedOut >= 1.0f)
             {
-                GetComponent<RoboMove>().enabled = false;
-                Respawn = true;
-            }
-
-            if (Respawn == true)
-            {
-                feedOut += Time.deltaTime;
-                BlackOut.GetComponent<Image>().color = new Color(0, 0, 0, feedOut);
-
-                if (feedOut >= 1.0f)
-                {
-                    transform.position = firstPos;
-                    GetComponent<RoboMove>().enabled = true;
-                    Respawn = false;
-                }
+                transform.position = firstPos;
+                GetComponent<RoboMove>().enabled = true;
+                Respawn = false;
             }
         }
-        else
+        
+        if (feedOut > 0.0f && Respawn == false)
         {
-            if (feedOut >= 0.0f)
-            {
-                feedOut -= Time.deltaTime * 0.4f;
-                BlackOut.GetComponent<Image>().color = new Color(0, 0, 0, feedOut);
-            }
+            feedOut -= Time.deltaTime * 0.4f;
+            BlackOut.GetComponent<Image>().color = new Color(0, 0, 0, feedOut);
         }
     }
 
@@ -248,7 +244,8 @@ public class Player : MonoBehaviour
         if (col.CompareTag("Needle"))
         {
             SoundManager.PlaySE(SE_Enum.NEEDLE, this.gameObject);
-            transform.position = firstPos;
+            GetComponent<RoboMove>().enabled = false;
+            Respawn = true;
         }
     }
 
