@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     Vector3 firstPos;
     bool Respawn;
     float feedOut;
-    GameObject BlackOut;
+    public GameObject BlackOut;
 
     void Awake()
     {
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         SoundManager.PlayBGM(BGM_Enum.PLAY_1);
+        BlackOut = GameObject.Find("BlackOut");
         Respawn = false;
         feedOut = 0;
     }
@@ -50,24 +51,7 @@ public class Player : MonoBehaviour
     {
         ViewLabel();
         ShotBullet();
-
-        //一定の高さ以下になった時の復活処理
-        if (transform.position.y < -5f)
-        {
-            if (Respawn == false)
-            {
-                GetComponent<RoboMove>().enabled = false;
-                Respawn = true;
-            }
-
-            if (Respawn == true)
-            {
-                feedOut += Time.deltaTime * 0.3f;
-
-
-            }
-            transform.position = firstPos;
-        }
+        PlayerRespawn();
     }
 
     void FixedUpdate()
@@ -219,6 +203,43 @@ public class Player : MonoBehaviour
 
             bullets.GetComponent<Rigidbody>().AddForce(force);
             bullets.transform.position = muzzle[Convert.ToInt32(g_stateFlag)].position;
+        }
+    }
+
+    /// <summary>
+    /// Playerの復活と暗転明転処理
+    /// </summary>
+    void PlayerRespawn()
+    {
+        //一定の高さ以下になった時の復活処理
+        if (transform.position.y < -5f)
+        {
+            if (Respawn == false)
+            {
+                GetComponent<RoboMove>().enabled = false;
+                Respawn = true;
+            }
+
+            if (Respawn == true)
+            {
+                feedOut += Time.deltaTime;
+                BlackOut.GetComponent<Image>().color = new Color(0, 0, 0, feedOut);
+
+                if (feedOut >= 1.0f)
+                {
+                    transform.position = firstPos;
+                    GetComponent<RoboMove>().enabled = true;
+                    Respawn = false;
+                }
+            }
+        }
+        else
+        {
+            if (feedOut >= 0.0f)
+            {
+                feedOut -= Time.deltaTime * 0.4f;
+                BlackOut.GetComponent<Image>().color = new Color(0, 0, 0, feedOut);
+            }
         }
     }
 
