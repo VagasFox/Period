@@ -8,6 +8,7 @@ TagManager:
   - Gimmick
   - SoundManager
   - Needle
+  - StopZone
   layers:
   - Default
   - TransparentFX
