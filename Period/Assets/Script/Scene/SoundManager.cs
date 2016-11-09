@@ -5,8 +5,7 @@ using System.Collections.Generic;
 public enum BGM_Enum
 {
     TITLE = 0,          //タイトル
-    PLAY_1,             //ゲームプレイ中１
-    PLAY_2,             //ゲームプレイ中２
+    PLAY,             //ゲームプレイ中１
     ENDING,             //エンディング
     None,				//何も再生していない
 }
@@ -18,6 +17,12 @@ public enum SE_Enum
     NEEDLE,
     WIND,
     ROCK,
+    FALL,
+    MOVE,
+    KABEUP,
+    MISS,
+    SHOT_CHANGE,
+    GOAL,
 }
 public class SoundManager : MonoBehaviour
 {

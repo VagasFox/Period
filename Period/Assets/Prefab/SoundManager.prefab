@@ -52,8 +52,8 @@ MonoBehaviour:
   - bgmEum: 1
     bgm: {fileID: 8300000, guid: d8873e2784579974da0de890622401f5, type: 3}
     volume: 0.5
-  - bgmEum: 2
-    bgm: {fileID: 8300000, guid: 6068d57ec473c6843b15e392df55a6dd, type: 3}
+  - bgmEum: 0
+    bgm: {fileID: 8300000, guid: 1062d23ffc661a847956e1760a4cd210, type: 3}
     volume: 0.5
   seParameter:
   - seEnum: 1
@@ -66,10 +66,28 @@ MonoBehaviour:
     se: {fileID: 8300000, guid: 1dc63b43cd3883543a91607e122b8fdf, type: 3}
     volume: 1
   - seEnum: 4
-    se: {fileID: 8300000, guid: 86d0253bc9c7f0642a8f8f4f4c63699b, type: 3}
+    se: {fileID: 8300000, guid: e96cded892402be4b846d3f57917c3da, type: 3}
     volume: 1
   - seEnum: 3
     se: {fileID: 8300000, guid: 6d510c0e1e9366c42a47ea46d9132d1e, type: 3}
+    volume: 1
+  - seEnum: 5
+    se: {fileID: 8300000, guid: bd6e7117f7ac30049adcf4b407f0c9d4, type: 3}
+    volume: 1
+  - seEnum: 6
+    se: {fileID: 8300000, guid: 11577f6c1cc87414f975b8d293a06ced, type: 3}
+    volume: 1
+  - seEnum: 7
+    se: {fileID: 8300000, guid: 6712c55561fc15144904c5eb05914863, type: 3}
+    volume: 1
+  - seEnum: 8
+    se: {fileID: 8300000, guid: dea48c6e24fe6ac49a20f603736bfedc, type: 3}
+    volume: 1
+  - seEnum: 9
+    se: {fileID: 8300000, guid: d29bf6e012901de49bad54a9d548d138, type: 3}
+    volume: 1
+  - seEnum: 10
+    se: {fileID: 8300000, guid: 0d39b98edc74f1945a64ff3b199c9ce1, type: 3}
     volume: 1
   feedInSetting:
     serializedVersion: 2

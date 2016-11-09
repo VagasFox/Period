@@ -15,7 +15,7 @@ public class StartDirection : MonoBehaviour {
     Player PL;
     // Use this for initialization
     void Start () {
-        SoundManager.PlayBGM(BGM_Enum.PLAY_1);
+        SoundManager.PlayBGM(BGM_Enum.PLAY);
         mPlayer = GameObject.FindGameObjectWithTag("Player");
         RM = mPlayer.GetComponent<RoboMove>();
         RM.enabled = false;
