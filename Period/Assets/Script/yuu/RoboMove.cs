@@ -10,18 +10,21 @@ public class RoboMove : MonoBehaviour {
     private float rotate;
     public float gravity = 9.8f;
     private CharacterController controller;
+    public StartDirection SD;
     public Vector3 DirectMove = Vector3.zero;
 
     public Animator charaAnim;
 	// Use this for initialization
 	void Start () {
         controller = GetComponent<CharacterController>();
+        SD = GameObject.Find("Main Camera").GetComponent<StartDirection>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         ActMove();
-
+        CharaRotation();
+        
         //頂点まで来た後に下に落ちるのを早める場合
         if (DirectMove.y >= 2)
         {
@@ -36,8 +39,6 @@ public class RoboMove : MonoBehaviour {
         //DirectMove.y -= gravity * Time.deltaTime;
 
         controller.Move(DirectMove * Time.deltaTime);
-        CharaRotation();
-
 	}
 
     void ActMove()

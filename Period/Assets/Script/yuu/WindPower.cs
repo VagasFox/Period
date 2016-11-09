@@ -17,7 +17,6 @@ public class WindPower : MonoBehaviour {
 
     void OnTriggerStay(Collider Coll)
     {
-        Debug.Log("( ;∀;)");
         if (Coll.tag == "Player")
         {
             Coll.GetComponent<RoboMove>().DirectMove.y += yWindPower * Time.deltaTime;
