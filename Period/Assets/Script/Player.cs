@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        SoundManager.PlayBGM(BGM_Enum.PLAY_1);
+        
         BlackOut = GameObject.Find("BlackOut");
         Respawn = false;
         feedOut = 0;
@@ -60,6 +60,8 @@ public class Player : MonoBehaviour
             Respawn = true;
         }
 
+
+        if (Input.GetKey(KeyCode.X)) { }
         
     }
 

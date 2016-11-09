@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 pos = wayPoints[currentRoot].position;
 
-        if (Vector3.Distance(transform.position, pos) < 0.5f)
+        if (Vector3.Distance(transform.position, pos) < 0.7f)
         {
             currentRoot = (currentRoot < wayPoints.Length - 1) ? currentRoot + 1 : 0;
         }
