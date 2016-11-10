@@ -1,0 +1,17 @@
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/UnityEngine.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/UnityEditor.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Mono.Cecil.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Unity.DataContract.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/m0115173b1/KIGGJ2016_first/Period/Temp/bin/Debug/Mono.Cecil.Mdb.dll

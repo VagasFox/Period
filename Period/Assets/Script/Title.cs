@@ -5,8 +5,8 @@ public class Title : MonoBehaviour {
     [SerializeField]
     private GameObject[] biribiri = new GameObject[2];
 
-    private float switchTime = 0f;
-    private bool flag = false;
+	public float switchTime = 0f;
+	public bool flag = false;
 
     [SerializeField]
     private float plusScale = 1.5f;
@@ -17,7 +17,7 @@ public class Title : MonoBehaviour {
     }
 
     void Update () {
-        switchTime = Time.deltaTime;
+        switchTime += Time.deltaTime;
 
         if (switchTime > 0.5f) {
             flag = !flag;
