@@ -5,11 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Title.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/StageSelect.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Stage01.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/test.unity
+  - enabled: 1
+    path: Assets/Scene kai/Title.unity
+  - enabled: 1
+    path: Assets/Scene kai/StageSelect.unity
+  - enabled: 1
+    path: Assets/Scene kai/DemoStage(Stage1).unity
+  - enabled: 1
+    path: Assets/Scene kai/Stage2.unity
+  - enabled: 1
+    path: Assets/Scene kai/Stage3.unity
+  - enabled: 1
+    path: Assets/Scene kai/Stage4.unity
