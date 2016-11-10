@@ -49,7 +49,10 @@ public class RoboMove : MonoBehaviour {
 
         //runアニメーションを作動させる
         charaAnim.SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical")));
-        
+
+        Vector3 MoveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        if (MoveDir != Vector3.zero) SoundManager.PlaySE(SE_Enum.MOVE, this.gameObject);
+
         //地上に居る時の判定（移動もこの中に入れてもいいかもしれない）
         if (controller.isGrounded)
         {

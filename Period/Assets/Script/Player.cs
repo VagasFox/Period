@@ -200,7 +200,12 @@ public class Player : MonoBehaviour
     void ShotBullet()
     {
         //弾の種類変更
-        if (Input.GetKeyDown(KeyCode.Z)) g_stateFlag = !g_stateFlag;
+        if (Input.GetKeyDown(KeyCode.Z)) {
+            if (!SoundManager.isNowSE(SE_Enum.SHOT_CHANGE, this.gameObject)) {
+                SoundManager.PlaySE(SE_Enum.SHOT_CHANGE, this.gameObject);
+            }
+            g_stateFlag = !g_stateFlag;
+        }
 
         if (g_stateFlag)
         {

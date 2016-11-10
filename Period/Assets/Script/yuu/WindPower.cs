@@ -19,6 +19,7 @@ public class WindPower : MonoBehaviour {
     {
         if (Coll.tag == "Player")
         {
+            SoundManager.PlaySE(SE_Enum.WIND, this.gameObject);
             Coll.GetComponent<RoboMove>().DirectMove.y += yWindPower * Time.deltaTime;
         }
         else

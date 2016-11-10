@@ -275,7 +275,6 @@ GameObject:
   - 20: {fileID: 973125808}
   - 92: {fileID: 973125807}
   - 124: {fileID: 973125806}
-  - 81: {fileID: 973125805}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -283,13 +282,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &973125805
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973125804}
-  m_Enabled: 1
 --- !u!124 &973125806
 Behaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +343,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1001 &1140425567
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 301.02664
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 165.07144
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 423728, guid: f4216f2848615104584315880d5cd967, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f4216f2848615104584315880d5cd967, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1173856484
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,11 +625,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
