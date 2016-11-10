@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        SoundManager.PlayBGM(BGM_Enum.PLAY);   
         BlackOut = GameObject.Find("BlackOut");
         Respawn = false;
         feedOut = 0;

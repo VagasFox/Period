@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -439,6 +439,7 @@ GameObject:
   - 20: {fileID: 973125808}
   - 92: {fileID: 973125807}
   - 124: {fileID: 973125806}
+  - 114: {fileID: 973125805}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -446,6 +447,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &973125805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973125804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ea5993b94fcb8488750aa0d12966e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biribiri:
+  - {fileID: 1575476462}
+  - {fileID: 791431795}
+  switchTime: 0
+  flag: 0
+  plusScale: 1.5
 --- !u!124 &973125806
 Behaviour:
   m_ObjectHideFlags: 0

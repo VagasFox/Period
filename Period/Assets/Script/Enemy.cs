@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
     void SearchTarget()
     {
-        ray = new Ray(transform.position, transform.forward);
+        ray = new Ray(transform.position+ new Vector3(0f,0.5f,0f), transform.forward);
         Debug.DrawRay(ray.origin, ray.direction, Color.red, 20.0f);
 
         if (Physics.Raycast(ray, out rayHit, rayDistance))
@@ -130,6 +130,7 @@ public class Enemy : MonoBehaviour
         Vector3 targetPos = target.transform.position;
 
         agent.SetDestination(targetPos);
+        Debug.Log("発見");
 
         if (Vector3.Distance(transform.position, targetPos) > distancePoint)
         {
