@@ -3,9 +3,20 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour {
-    
-    public void SceneLoad(string SceneName)
+	float timeDelay = 0;
+	bool SS = false;
+	string SceneName;
+    public void SceneLoad(string SN)
     {
-        SceneManager.LoadScene(SceneName);
+		SS = true;
+		SceneName = SN;
     }
+
+	void Update(){
+		if (SS == true) {
+			timeDelay += Time.deltaTime;
+			if(timeDelay >= 1.3f) SceneManager.LoadScene(SceneName);
+		}
+
+	}
 }
