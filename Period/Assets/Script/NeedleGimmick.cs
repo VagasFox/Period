@@ -13,9 +13,9 @@ public class NeedleGimmick : MonoBehaviour {
     void Update()
     {
         rotation = (float)gimState.gimmickNum;
-        RotateGim[0].transform.rotation = Quaternion.Euler(rotation, 0, 0);
+        RotateGim[0].transform.rotation = Quaternion.Euler(rotation, 90f, 0);
         RotateGim[1].transform.rotation = Quaternion.Euler(180f-rotation, 0, 0);
-        RotateGim[2].transform.rotation = Quaternion.Euler(rotation, 0, 0);
+        RotateGim[2].transform.rotation = Quaternion.Euler(rotation, 90f, 0);
         RotateGim[3].transform.rotation = Quaternion.Euler(180f-rotation, 0, 0);
     }
 }

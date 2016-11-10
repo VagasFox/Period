@@ -8,7 +8,7 @@ public class GoalSctipt : MonoBehaviour {
     public string NextStageName;
     public float directionTime;
     private bool Goal;
-    private GameObject BlackOut;
+    public GameObject BlackOut;
     float feedOut;
 
     void Start()
