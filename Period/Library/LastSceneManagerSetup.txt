@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene kai/StageSelect.unity
+- path: Assets/Scene/DemoStage.unity
   isLoaded: 1
   isActive: 1
