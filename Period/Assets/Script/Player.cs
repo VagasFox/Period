@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     Vector3 firstPos;
     bool Respawn;
     float feedOut;
-    public GameObject BlackOut;
+    private GameObject BlackOut;
 
     void Awake()
     {
