@@ -39,20 +39,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (stopFunction) return;
-        switch (state)
+        if (!stopFunction)
         {
-            case EnemyState.Patrol:
-                Patroling();
-                break;
-            case EnemyState.Chase:
-                Chasing();
-                break;
-        }
-
-        if (state != nextState)
-        {
-            state = nextState;
             switch (state)
             {
                 case EnemyState.Patrol:
@@ -61,11 +49,25 @@ public class Enemy : MonoBehaviour
                 case EnemyState.Chase:
                     Chasing();
                     break;
-
             }
-        }
 
-        SearchTarget();
+            if (state != nextState)
+            {
+                state = nextState;
+                switch (state)
+                {
+                    case EnemyState.Patrol:
+                        Patroling();
+                        break;
+                    case EnemyState.Chase:
+                        Chasing();
+                        break;
+
+                }
+            }
+
+            SearchTarget();
+        }
     }
 
     void SearchTarget()
@@ -158,6 +160,9 @@ public class Enemy : MonoBehaviour
                 stopFunction = true;
 
                 col.GetComponent<StopZone>().MoveDoor = stopFunction;
+            
+                agent.speed = 3f;             //移動スピードの調整。0にすると停止。
+                agent.updateRotation = false; //NavMeshからの回転変更のON / OFF
             }
         }
     }

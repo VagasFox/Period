@@ -471,6 +471,7 @@ GameObject:
   - 92: {fileID: 92000010247971522}
   - 124: {fileID: 124000013061537938}
   - 114: {fileID: 114000010717693682}
+  - 114: {fileID: 114000012162458988}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -503,6 +504,21 @@ GameObject:
   - 4: {fileID: 4000012453896904}
   m_Layer: 0
   m_Name: RightFrontWheel1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013052877540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011620376246}
+  m_Layer: 0
+  m_Name: StDir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +759,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011280483758}
-  m_LocalRotation: {x: 0.70399106, y: 0.7097163, z: 0.018625883, w: 0.01877736}
+  m_LocalRotation: {x: 0.703991, y: 0.70971626, z: 0.018625882, w: 0.018777357}
   m_LocalPosition: {x: -0.084324636, y: -1.5758709e-17, z: -0.0043598264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -837,9 +853,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012765403326}
-  m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0.6, z: -0.6}
-  m_LocalScale: {x: 0.33333334, y: 0.33333328, z: 0.33333328}
+  m_LocalScale: {x: 0.33333334, y: 0.3333333, z: 0.3333333}
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010996341636}
@@ -870,7 +886,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013794171708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 13.97, z: -41.55}
+  m_LocalPosition: {x: -0.6, y: 0.506, z: -7.78}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -880,6 +896,7 @@ Transform:
   - {fileID: 4000012119897872}
   - {fileID: 4000010059177764}
   - {fileID: 4000010857829402}
+  - {fileID: 4000011620376246}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000011056299680
@@ -936,6 +953,19 @@ Transform:
   - {fileID: 4000012453896904}
   m_Father: {fileID: 4000010956808692}
   m_RootOrder: 5
+--- !u!4 &4000011620376246
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013052877540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010996341636}
+  m_RootOrder: 6
 --- !u!4 &4000011705850774
 Transform:
   m_ObjectHideFlags: 1
@@ -1247,7 +1277,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010443032352}
-  m_LocalRotation: {x: 0.70399106, y: 0.7097163, z: 0.018625883, w: 0.01877736}
+  m_LocalRotation: {x: 0.703991, y: 0.70971626, z: 0.018625882, w: 0.018777357}
   m_LocalPosition: {x: 0.08432461, y: 5.3273767e-17, z: 0.004359825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1471,6 +1501,20 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!114 &114000012162458988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012765403326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fcf187d22b2ec4b86eb4076d04ab2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  straightMoveNum: 1
+  rotationRadius: 2
+  charaAnim: {fileID: 95000011496553504}
 --- !u!114 &114000012802408658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2338,4 +2382,4 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.175, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}

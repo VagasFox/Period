@@ -18,25 +18,29 @@ public class Player : MonoBehaviour
     RectTransform rectTransform;                           //numWindowのRectTransform
 
     [SerializeField]
-    private GameObject[] bulletList = new GameObject[2];   //弾丸の種類
+    private GameObject[] bulletList = new GameObject[2];    //弾丸の種類
     [SerializeField]
-    private Transform[] muzzle = new Transform[2];         //弾丸発射点
+    private Transform[] muzzle = new Transform[2];          //弾丸発射点
     [SerializeField]
-    private float speed = 1000;                            //弾の発射速度
+    private float speed = 1000;                             //弾の発射速度
 
-    private bool g_stateFlag = false;                                       //Enum_Gimmickstateの変更用
+    private bool g_stateFlag = false;                       //Enum_Gimmickstateの変更用
 
     [SerializeField]
-    private GameObject rayPoint;
-    Vector3 firstPos;
-    bool Respawn;
+    private GameObject rayPoint;                            //Rayの発生地点
+    Vector3 firstPos;                                       //初期ポジション(リスポーン用)
+    bool Respawn;                                           //リスポーンフラグ
     float feedOut;
     private GameObject BlackOut;
+
+    GameObject backCamera;
 
     void Awake()
     {
         rectTransform = numWindow.GetComponent<RectTransform>();
         firstPos = transform.position;
+        backCamera = transform.FindChild("BackCamera").gameObject;
+        backCamera.SetActive(false);
     }
 
     void Start()
@@ -64,6 +68,9 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.X)) { }
         if (Input.GetKey(KeyCode.C)) { }
 
+
+        if (Input.GetKey(KeyCode.LeftShift)) backCamera.SetActive(true);
+        if (Input.GetKeyUp(KeyCode.LeftShift)) backCamera.SetActive(false);
     }
 
     void FixedUpdate()

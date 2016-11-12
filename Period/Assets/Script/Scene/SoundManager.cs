@@ -279,4 +279,17 @@ public class SoundManager : MonoBehaviour
 
         return ans;
     }
+
+    public static void StopSound(GameObject obj) {
+        AudioSource ans = null;
+        //オブジェクトが持っているAudioSourceを全て取得
+        AudioSource[] audio = obj.GetComponents<AudioSource>();
+
+        for (int i = 0; i < audio.Length; i++)
+        {
+            ans = audio[i];//それを格納
+        }
+
+        Destroy(ans);
+    }
 }

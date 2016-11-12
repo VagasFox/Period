@@ -57,9 +57,9 @@ public class RoboMove : MonoBehaviour {
         Vector3 MoveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         if (MoveDir != Vector3.zero)
         {
-            if (MoveSound.isPlaying == false)
+            if (!SoundManager.isNowSE(SE_Enum.MOVE, this.gameObject))
             {
-                MoveSound.PlayOneShot(MoveSound.clip);
+                SoundManager.PlaySE(SE_Enum.MOVE, this.gameObject);
             }
             else
             {
