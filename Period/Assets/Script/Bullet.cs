@@ -7,7 +7,8 @@ public enum Enum_BulletType {
     Attack,     //攻撃
 }
 
-public class Bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour
+{
     public Enum_BulletType eBulletType;
     private int gimmickNumberCount = 100;
 
@@ -74,6 +75,13 @@ public class Bullet : MonoBehaviour {
         }
         else
         {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.name == "BulletGard") {
             Destroy(this.gameObject);
         }
     }

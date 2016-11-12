@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        SoundManager.PlayBGM(BGM_Enum.PLAY);   
+        SoundManager.PlayBGM(BGM_Enum.PLAY);
         BlackOut = GameObject.Find("BlackOut");
         Respawn = false;
         feedOut = 0;
@@ -62,7 +62,8 @@ public class Player : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.X)) { }
-        
+        if (Input.GetKey(KeyCode.C)) { }
+
     }
 
     void FixedUpdate()
@@ -200,8 +201,10 @@ public class Player : MonoBehaviour
     void ShotBullet()
     {
         //弾の種類変更
-        if (Input.GetKeyDown(KeyCode.Z)) {
-            if (!SoundManager.isNowSE(SE_Enum.SHOT_CHANGE, this.gameObject)) {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (!SoundManager.isNowSE(SE_Enum.SHOT_CHANGE, this.gameObject))
+            {
                 SoundManager.PlaySE(SE_Enum.SHOT_CHANGE, this.gameObject);
             }
             g_stateFlag = !g_stateFlag;
@@ -248,7 +251,7 @@ public class Player : MonoBehaviour
                 Respawn = false;
             }
         }
-        
+
         if (feedOut > 0.0f && Respawn == false)
         {
             feedOut -= Time.deltaTime * 0.4f;
@@ -266,4 +269,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter(Collision col)
+    {
+        if (col.transform.CompareTag("Enemy"))
+        {
+            SoundManager.PlaySE(SE_Enum.NEEDLE, this.gameObject);
+            GetComponent<RoboMove>().enabled = false;
+            Respawn = true;
+        }
+    }
 }

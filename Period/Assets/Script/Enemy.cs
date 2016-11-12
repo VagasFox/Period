@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     private bool stopFunction = false;              //動作不能フラグ
 
-    
+
 
     public enum EnemyState
     {
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
     void SearchTarget()
     {
-        ray = new Ray(transform.position+ new Vector3(0f,0.5f,0f), transform.forward);
+        ray = new Ray(transform.position + new Vector3(0f, 0.5f, 0f), transform.forward);
         Debug.DrawRay(ray.origin, ray.direction, Color.red, 20.0f);
 
         if (Physics.Raycast(ray, out rayHit, rayDistance))
@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour
         Vector3 targetPos = target.transform.position;
 
         agent.SetDestination(targetPos);
-        Debug.Log("発見");
+        //Debug.Log("発見");
 
         if (Vector3.Distance(transform.position, targetPos) > distancePoint)
         {
@@ -139,14 +139,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter(Collision col)
+    {
+        if (col.transform.CompareTag("Player"))
+        {
+            currentRoot = 0;
+            transform.position = wayPoints[currentRoot].position;
+            ChangeState(EnemyState.Patrol);
+        }
+    }
+
     public void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("StopZone")) {
-            if (!stopFunction) {
+        if (col.CompareTag("StopZone"))
+        {
+            if (!stopFunction)
+            {
                 stopFunction = true;
 
                 col.GetComponent<StopZone>().MoveDoor = stopFunction;
-            }  
+            }
         }
     }
 }
