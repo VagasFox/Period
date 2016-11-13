@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enum.Sound;
 
 public enum Enum_BulletType {
     Multi = 0,  //掛け算

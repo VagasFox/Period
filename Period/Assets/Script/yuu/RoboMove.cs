@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enum.Sound;
 
 public class RoboMove : MonoBehaviour {
     //こっちはCharacterControllerを使用するタイプ
@@ -57,9 +58,9 @@ public class RoboMove : MonoBehaviour {
         Vector3 MoveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         if (MoveDir != Vector3.zero)
         {
-            if (!SoundManager.isNowSE(SE_Enum.MOVE, this.gameObject))
+            if (!SoundManager.isNowSE(Enum.Sound.SE_Enum.MOVE, this.gameObject))
             {
-                SoundManager.PlaySE(SE_Enum.MOVE, this.gameObject);
+                SoundManager.PlaySE(Enum.Sound.SE_Enum.MOVE, this.gameObject);
             }
             else
             {

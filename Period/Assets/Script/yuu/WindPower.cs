@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enum.Sound;
 
 public class WindPower : MonoBehaviour {
     public float xWindPower;
