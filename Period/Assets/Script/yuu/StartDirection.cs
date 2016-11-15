@@ -81,6 +81,8 @@ public class StartDirection : MonoBehaviour {
                 Rot = true;
                 RM.enabled = true;
                 PL.enabled = true;
+                mPlayer.transform.parent = null;
+                Destroy(StartDirectionObj);
                 transform.parent = mPlayer.transform;
                 transform.position = cameraPos;
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, 0);
