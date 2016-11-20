@@ -3,8 +3,7 @@ using System.Collections;
 
 public class GravityGimmick : MonoBehaviour {
     private float gravity;
-    
-    
+      
     //PlayertagのRoboMoveの重力操作用
     RoboMove PLGravity;
     GimmickState gimState;
