@@ -1346,18 +1346,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011626700348, guid: b75504885ca54b84283943cf0c94316d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011626700348, guid: b75504885ca54b84283943cf0c94316d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011626700348, guid: b75504885ca54b84283943cf0c94316d, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 114000013405325912, guid: b75504885ca54b84283943cf0c94316d,
         type: 2}
       propertyPath: wayPoints.Array.data[0]
@@ -1378,16 +1366,6 @@ Prefab:
       propertyPath: wayPoints.Array.data[3]
       value: 
       objectReference: {fileID: 2050413084}
-    - target: {fileID: 195000013439439766, guid: b75504885ca54b84283943cf0c94316d,
-        type: 2}
-      propertyPath: m_Speed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013405325912, guid: b75504885ca54b84283943cf0c94316d,
-        type: 2}
-      propertyPath: giveUpCount
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b75504885ca54b84283943cf0c94316d, type: 2}
   m_IsPrefabParent: 0

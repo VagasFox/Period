@@ -14,9 +14,9 @@ public class DoorGimmick : MonoBehaviour {
     private float rightDoorMove;
     public bool Complete;
 
-    private Vector3 firstPosL,firstPosR,endPosL, endPosR;
     private float movePoint = 9f;
     private float moveTime;
+    Vector3 firstPosL, firstPosR;
 
     GimmickState gimState;
 	// Use this for initialization
@@ -26,10 +26,9 @@ public class DoorGimmick : MonoBehaviour {
         minPass = (decimal)minPassNum;
         maxPass = (decimal)maxPassNum;
         Complete = false;
+
         firstPosL = LeftDoor.transform.position;
         firstPosR = RightDoor.transform.position;
-        endPosL = new Vector3(firstPosL.x - movePoint, firstPosL.y, firstPosL.z);
-        endPosR = new Vector3(firstPosR.x + movePoint, firstPosR.y, firstPosR.z);
     }
 	
 	// Update is called once per frame
@@ -55,6 +54,9 @@ public class DoorGimmick : MonoBehaviour {
     {
         if (Complete == true)
         {
+            Vector3 endPosL = new Vector3(firstPosL.x - movePoint, firstPosL.y, firstPosL.z);
+            Vector3 endPosR = new Vector3(firstPosR.x + movePoint, firstPosR.y, firstPosR.z);
+
             moveTime += Time.deltaTime;
             LeftDoor.transform.position = Vector3.Lerp(firstPosL, endPosL, moveTime);
             RightDoor.transform.position = Vector3.Lerp(firstPosR,endPosR, moveTime);

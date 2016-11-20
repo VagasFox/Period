@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class GimmickManager : MonoBehaviour {
-   
-
     [System.Serializable]
     public class Gimmicks {
         public GameObject gimmickObjs;
