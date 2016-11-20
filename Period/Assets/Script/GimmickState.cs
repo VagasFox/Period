@@ -1,21 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enum.Gimmick;
 
-//値変更用Enum
-public enum Enum_GimmickState
-{
-    GRAVITY,    //重力
-    HARDNESS,   //硬さ
-    SPEED,      //速さ
-    ATTACK,     //攻撃力
-    DOOR,       //ドア
-    LIGHT,      //ライト
-    ROTATE,     //回転
-    SIZE,       //大きさ
-    NEEDLE,     //とげ
-    WIND,       //風
-    NONE,       //何も無し
-}
 
 //主に値の設定と変更を行う。Enum_GimmickStateに合わせ見た目の変更もやるかも
 public class GimmickState : MonoBehaviour {
@@ -25,7 +11,7 @@ public class GimmickState : MonoBehaviour {
     public int gimmickNumCount;
     public int digit = 1; //初期の桁数±何桁まで許容するか
 
-    public Enum_GimmickState eGimState;
+    public GimmickType eGimState;
   
 
     void Start()

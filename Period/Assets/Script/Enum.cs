@@ -25,4 +25,20 @@ namespace Enum {
             GOAL,
         }
     }
+    namespace Gimmick{
+        public enum GimmickType
+        {
+            GRAVITY,    //重力
+            HARDNESS,   //硬さ
+            SPEED,      //速さ
+            ATTACK,     //攻撃力
+            DOOR,       //ドア
+            LIGHT,      //ライト
+            ROTATE,     //回転
+            SIZE,       //大きさ
+            NEEDLE,     //とげ
+            WIND,       //風
+            NONE,       //何も無し
+        }
+    }
 }

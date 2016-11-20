@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 using Enum.Sound;
+using Enum.Gimmick;
 
 public class Player : MonoBehaviour
 {
@@ -14,8 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject numWindow;                          //数値表示用背景
     private String GimNum;
-    private String HintText1;                              //何のギミックなのかを表示させる用
-    private String HintText2;                              //何のギミックなのかを表示させる用
+    private string[] m_hintText = new string[2];             //何のギミックなのかを表示させる用
     RectTransform rectTransform;                           //numWindowのRectTransform
 
     [SerializeField]
@@ -144,64 +144,13 @@ public class Player : MonoBehaviour
             gimmickNumDisplay = gimmickNumDisplay.Remove(hitObj.GetComponent<GimmickState>().gimmickNumCount);
         }
         //ギミックの種類判断と、Textに表示するヒント文
-        Enum_GimmickState Gimmick = hitObj.GetComponent<GimmickState>().eGimState;
+        GimmickType Gimmick = hitObj.GetComponent<GimmickState>().eGimState;
+        
+        HintText.SetHitnText(Gimmick, ref m_hintText, hitObj);
 
-        SetHintText(Gimmick);
-
-        text.GetComponent<Text>().text = HintText1 + gimmickNumDisplay + HintText2;
+        text.GetComponent<Text>().text = m_hintText[0] + gimmickNumDisplay + m_hintText[1];
         hitObj.GetComponent<GimmickState>().gimmickNum = decimal.Parse(gimmickNumDisplay);
     }
-
-    /// <summary>
-    /// 取得したEnum_GimmickStateからヒント文を設定する
-    /// </summary>
-    /// <param name="eGim">取得したEnum_GimmickState</param>
-    void SetHintText(Enum_GimmickState eGim)
-    {
-        switch (eGim)
-        {
-            case Enum_GimmickState.GRAVITY:
-                HintText1 = "重力:";
-                HintText2 = "";
-                break;
-
-            case Enum_GimmickState.DOOR:
-                HintText1 = hitObj.GetComponent<DoorGimmick>().minPass + " < ";
-                HintText2 = " < " + hitObj.GetComponent<DoorGimmick>().maxPass;
-                break;
-
-            case Enum_GimmickState.ROTATE:
-                HintText1 = "角度:";
-                HintText2 = "";
-                break;
-
-            case Enum_GimmickState.LIGHT:
-                HintText1 = "光度:";
-                HintText2 = "";
-                break;
-
-            case Enum_GimmickState.SIZE:
-                HintText1 = "大きさ";
-                HintText2 = "";
-                break;
-
-            case Enum_GimmickState.NEEDLE:
-                HintText1 = "";
-                HintText2 = "";
-                break;
-
-            case Enum_GimmickState.WIND:
-                HintText1 = "風力";
-                HintText2 = "";
-                break;
-
-            case Enum_GimmickState.NONE:
-                HintText1 = "";
-                HintText2 = "";
-                break;
-        }
-    }
-
 
     /// <summary>
     /// 弾の発射と弾の種類変更
