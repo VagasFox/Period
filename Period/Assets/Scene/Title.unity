@@ -103,7 +103,6 @@ GameObject:
   - 114: {fileID: 246149107}
   - 114: {fileID: 246149106}
   - 114: {fileID: 246149111}
-  - 82: {fileID: 246149112}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -218,80 +217,6 @@ MonoBehaviour:
   switchTime: 0
   flag: 0
   plusScale: 1.5
---- !u!82 &246149112
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 246149105}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!1 &566646232
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +242,7 @@ RectTransform:
   m_GameObject: {fileID: 566646232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1.2004979, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 246149110}
@@ -439,7 +364,6 @@ GameObject:
   - 20: {fileID: 973125808}
   - 92: {fileID: 973125807}
   - 124: {fileID: 973125806}
-  - 114: {fileID: 973125805}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -447,23 +371,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &973125805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973125804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ea5993b94fcb8488750aa0d12966e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  biribiri:
-  - {fileID: 1575476462}
-  - {fileID: 791431795}
-  switchTime: 0
-  flag: 0
-  plusScale: 1.5
 --- !u!124 &973125806
 Behaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +474,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4216f2848615104584315880d5cd967, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1140425568 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 135208, guid: f4216f2848615104584315880d5cd967, type: 2}
+  m_PrefabInternal: {fileID: 1140425567}
+--- !u!114 &1140425569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140425568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89dd8986030ce614a9525ad73b185975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1173856484
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,18 +574,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: StageSelect
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 246149112}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: b489d64e9804b45f6ac7df164ce92b79,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

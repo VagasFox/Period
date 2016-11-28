@@ -2510,39 +2510,15 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.01877736
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013794171708, guid: 1c34065779008254487b17446ec13af4, type: 2}
+      propertyPath: m_Name
+      value: Robo_Player_1027 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 114000010149533972, guid: 1c34065779008254487b17446ec13af4,
         type: 2}
       propertyPath: numWindow
       value: 
       objectReference: {fileID: 352287089}
-    - target: {fileID: 114000012802408658, guid: 1c34065779008254487b17446ec13af4,
-        type: 2}
-      propertyPath: gravity
-      value: 9.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 143000012250323156, guid: 1c34065779008254487b17446ec13af4,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012802408658, guid: 1c34065779008254487b17446ec13af4,
-        type: 2}
-      propertyPath: jumpSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013794171708, guid: 1c34065779008254487b17446ec13af4, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013794171708, guid: 1c34065779008254487b17446ec13af4, type: 2}
-      propertyPath: m_Name
-      value: Robo_Player_1027 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 23000014199288768, guid: 1c34065779008254487b17446ec13af4,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 48393678a4fe9d94486546bf37a912a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c34065779008254487b17446ec13af4, type: 2}
   m_IsPrefabParent: 0

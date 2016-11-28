@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        UnityEngine.Cursor.visible = false;
         rectTransform = numWindow.GetComponent<RectTransform>();
         firstPos = transform.position;
         backCamera = transform.FindChild("BackCamera").gameObject;

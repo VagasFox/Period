@@ -13,7 +13,6 @@ public class SppedGimmick : MonoBehaviour {
        
     }
 	
-	// Update is called once per frame
 	void Update () {
         speed = (float)gimState.gimmickNum;
         enemyObj.GetComponent<NavMeshAgent>().speed = speed;

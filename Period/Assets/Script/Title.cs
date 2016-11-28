@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using Enum.Sound;
 
@@ -12,15 +13,28 @@ public class Title : MonoBehaviour {
     [SerializeField]
     private float plusScale = 1.5f;
 
+    SceneSwitch s_switch;
+
     void Awake()
     {
         SoundManager.PlayBGM(BGM_Enum.TITLE);
+        s_switch = GetComponent<SceneSwitch>();
+        UnityEngine.Cursor.visible = true;
     }
 
     void Update () {
+        SwitchLogo();
+        if (Input.GetKeyDown(KeyCode.Return)) s_switch.SceneLoad("StageSelect");
+    }
+
+    /// <summary>
+    /// タイトルロゴの電気マークの点滅演出
+    /// </summary>
+    void SwitchLogo() {
         switchTime += Time.deltaTime;
 
-        if (switchTime > 0.5f) {
+        if (switchTime > 0.5f)
+        {
             flag = !flag;
             switchTime = 0f;
         }
