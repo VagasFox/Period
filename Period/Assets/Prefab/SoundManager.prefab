@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 423728}
   - 114: {fileID: 11422136}
   - 81: {fileID: 8184606}
+  - 114: {fileID: 114000012360200448}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: SoundManager
@@ -54,7 +55,7 @@ MonoBehaviour:
     volume: 0.5
   - bgmEum: 0
     bgm: {fileID: 8300000, guid: 1062d23ffc661a847956e1760a4cd210, type: 3}
-    volume: 0.5
+    volume: 1
   seParameter:
   - seEnum: 1
     se: {fileID: 8300000, guid: 5de09ddc2f673ba4282291a126759b4d, type: 3}
@@ -137,3 +138,14 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135208}
   m_IsPrefabParent: 1
+--- !u!114 &114000012360200448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89dd8986030ce614a9525ad73b185975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

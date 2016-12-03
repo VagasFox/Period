@@ -17,9 +17,12 @@ public class Title : MonoBehaviour {
 
     void Awake()
     {
-        SoundManager.PlayBGM(BGM_Enum.TITLE);
         s_switch = GetComponent<SceneSwitch>();
         UnityEngine.Cursor.visible = true;
+    }
+
+    void Start() {
+        SoundManager.PlayBGM(BGM_Enum.TITLE);
     }
 
     void Update () {
